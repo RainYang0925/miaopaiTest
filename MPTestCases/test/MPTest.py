@@ -9,8 +9,9 @@ from lib2to3.tests.support import driver
 PATH=lambda p:os.path.abspath(os.path.join(os.path.dirname(__file__),p))
 global driver
 fd = open(  'bugReport.txt', 'w')
-if not os.path.isdir("C:\\Users\\Administrator\\Desktop" ):
+"""if not os.path.isdir("C:\\Users\\Administrator\\Desktop" ):
 	os.mkdir("C:\\Users\\Administrator\\Desktop" )
+"""
 #目前写的我本地路径，搭建到新的服务器后，文件路径需要修改
 
 class MPTest(unittest.TestCase):
