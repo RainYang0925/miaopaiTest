@@ -83,7 +83,7 @@ class MPsetting(unittest.TestCase):
 		sleep(1)
 
 		'''语言设置
-		1、主要测试了繁体中文，英文，简体中文之间的切换
+		1、主要测试了繁体中文，英文，简体中文之间的切换，以及判断语言是否改变
 		'''
 	def test_change_language(self):
 		print 'start test_change_language test ...  '
@@ -98,6 +98,9 @@ class MPsetting(unittest.TestCase):
 		sleep(1)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_selectlanguage_traditional').click()  #点击繁体中文
 		sleep(2)
+		txt = self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').get_attribute("text")
+		self.assertEqual(txt,u'我')
+		sleep(2)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 		sleep(2)
 		self.driver.swipe(200,800,200,200,1000) #我的页面向上滑动
@@ -108,6 +111,9 @@ class MPsetting(unittest.TestCase):
 		sleep(1)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_selectlanguage_english').click()  #点击Englist
 		sleep(2)
+		txt = self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').get_attribute("text")
+		self.assertEqual(txt,'Me')
+		sleep(2)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 		sleep(2)
 		self.driver.swipe(200,800,200,200,1000) #我的页面向上滑动
@@ -117,6 +123,9 @@ class MPsetting(unittest.TestCase):
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/rl_language_setting').click()  #点击语言设置
 		sleep(1)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_selectlanguage_simplified').click()  #点击简体中文
+		sleep(2)
+		txt = self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').get_attribute("text")
+		self.assertEqual(txt,u'我')
 		sleep(2)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 		sleep(2)
