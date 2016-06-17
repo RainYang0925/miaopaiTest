@@ -8,6 +8,17 @@ from time import sleep
 class MPsetting(unittest.TestCase):
 	def __init__(self,methodName):
 		unittest.TestCase.__init__(self, methodName)
+
+	def init_case(self):
+		#处理开屏广告是否存在的情况
+		try:
+			sleep(1)
+			el = self.driver.find_element_by_id('com.yixia.videoeditor:id/adver_imageview')   #获取开屏广告是否存在
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/textview')    #点击开屏广告上的'点击跳过'按钮
+			sleep(2)
+		except Exception,ex:
+			pass
+		
 	
 	def setUp(self):
 		desired_caps={}
@@ -33,10 +44,11 @@ class MPsetting(unittest.TestCase):
 		'''按钮的点击测试
 		1、分别对静音、wifi下自动播放、3G较底画质开关、静音进行了打开和关闭的点击测试
 		'''
+		self.init_case()
 		sleep(5)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 		sleep(2)
-		self.driver.swipe(200,800,200,200,1000) #我的页面向上滑动
+		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
 		sleep(1)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
 		sleep(2)
@@ -58,10 +70,11 @@ class MPsetting(unittest.TestCase):
 		'''
 	def test_comment_etc(self):
 		print 'start test_comment_etc test ...  '
+		self.init_case()
 		sleep(5)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 		sleep(2)
-		self.driver.swipe(200,800,200,200,1000) #我的页面向上滑动
+		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
 		sleep(1)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
 		sleep(2)
@@ -87,6 +100,7 @@ class MPsetting(unittest.TestCase):
 		'''
 	def test_change_language(self):
 		print 'start test_change_language test ...  '
+		self.init_case()
 		sleep(5)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 		sleep(2)
@@ -103,7 +117,7 @@ class MPsetting(unittest.TestCase):
 		sleep(2)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 		sleep(2)
-		self.driver.swipe(200,800,200,200,1000) #我的页面向上滑动
+		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
 		sleep(1)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
 		sleep(2)
@@ -116,7 +130,7 @@ class MPsetting(unittest.TestCase):
 		sleep(2)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 		sleep(2)
-		self.driver.swipe(200,800,200,200,1000) #我的页面向上滑动
+		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
 		sleep(1)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
 		sleep(2)
@@ -129,7 +143,7 @@ class MPsetting(unittest.TestCase):
 		sleep(2)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 		sleep(2)
-		self.driver.swipe(200,800,200,200,1000) #我的页面向上滑动
+		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
 		sleep(1)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
 		sleep(2)
@@ -139,10 +153,11 @@ class MPsetting(unittest.TestCase):
 		'''
 	def test_bind_mobile(self):
 		print 'start test_bind_mobile test ...  '
+		self.init_case()
 		sleep(5)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 		sleep(2)
-		self.driver.swipe(200,800,200,200,1000) #我的页面向上滑动
+		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
 		sleep(1)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
 		sleep(2)
@@ -162,10 +177,11 @@ class MPsetting(unittest.TestCase):
 		'''
 	def test_feedback(self):
 		print 'start test_feedback test ...  '
+		self.init_case()
 		sleep(5)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 		sleep(2)
-		self.driver.swipe(200,800,200,200,1000) #我的页面向上滑动
+		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
 		sleep(1)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
 		sleep(2)
@@ -195,7 +211,7 @@ class MPsetting(unittest.TestCase):
 		sleep(0.5)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/checkBox3').click()  #选中剪辑不方便
 		sleep(0.5)
-		self.driver.swipe(200,800,200,200,1000) #向上滑动页面
+		self.driver.swipe(200,1000,200,100,1000) #向上滑动页面
 		sleep(1)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/checkBox4').click()  #选中画面不清晰
 		sleep(0.5)
@@ -286,10 +302,11 @@ class MPsetting(unittest.TestCase):
 		'''
 	def test_version_check(self):
 		print 'start test_version_check test ...  '
+		self.init_case()
 		sleep(5)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 		sleep(2)
-		self.driver.swipe(200,800,200,200,1000) #我的页面向上滑动
+		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
 		sleep(1)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
 		sleep(2)
@@ -304,10 +321,11 @@ class MPsetting(unittest.TestCase):
 		'''
 	def test_clear_cache(self):
 		print 'start test_clear_cache test ...  '
+		self.init_case()
 		sleep(5)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 		sleep(2)
-		self.driver.swipe(200,800,200,200,1000) #我的页面向上滑动
+		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
 		sleep(1)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
 		sleep(2)
@@ -341,10 +359,11 @@ class MPsetting(unittest.TestCase):
 	'''
 	def test_setting_page_all_button_click(self):
 		print 'start test_setting_page_all_button_click test ...  '
+		self.init_case()
 		sleep(5)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 		sleep(2)
-		self.driver.swipe(200,800,200,200,1000) #我的页面向上滑动
+		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
 		sleep(1)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
 		sleep(2)
