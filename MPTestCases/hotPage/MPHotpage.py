@@ -62,7 +62,13 @@ class MPHotpage(unittest.TestCase):
 		print 'start switch_category_at_shouye_by_click test ...  '
 		self.init_case()
 		sleep(5)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_feed').click() #点击底导上的首页
+		ele1 = self.driver.find_elements_by_xpath('//android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.HorizontalScrollView/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.RadioButton') #点击底导上的首页
+		print ele1
+		print len(ele1)
+		ele1[3].click();
+		sleep(5)
+		
+		
 		
 	def switch_category_at_shouye_by_slide(self):
 		'''切换分类页面
@@ -84,6 +90,7 @@ class MPHotpage(unittest.TestCase):
 def suite(self):
 	suite = unittest.TestSuite()  
 	#suite.addTest(MPHotpage('click_shouye_rebang_faxian_wo'))
-	suite.addTest(MPHotpage('switch_category_at_shouye_by_slide'))
+	#suite.addTest(MPHotpage('switch_category_at_shouye_by_slide'))
+	suite.addTest(MPHotpage('switch_category_at_shouye_by_click'))
 	runner = unittest.TextTestRunner()  
 	runner.run(suite)
