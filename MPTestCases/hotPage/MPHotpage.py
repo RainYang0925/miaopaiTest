@@ -25,7 +25,7 @@ class MPHotpage(unittest.TestCase):
 		desired_caps['platformName']='Android'
 		desired_caps['browserName']=''
 		desired_caps['version']='4.4.2'
-		desired_caps['deviceName']='HUAWEI H60-L01'
+		desired_caps['deviceName']='69T7N15B26001273'
 
 		#desired_caps['app'] = PATH('D:\\AndroidAutomation\\AndroidAutoTest\\app\\zhongchou.apk')
 		#被测试的App在电脑上的位置
@@ -56,17 +56,26 @@ class MPHotpage(unittest.TestCase):
 		sleep(2)
 		
 	def switch_category_at_shouye_by_click(self):
-		'''按钮的点击测试
-		1、切换完首页所有的分类
+		'''首页平道分类测试
+		1、点击切换完首页所有的分类
 		'''
 		print 'start switch_category_at_shouye_by_click test ...  '
 		self.init_case()
 		sleep(5)
 		ele1 = self.driver.find_elements_by_xpath('//android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.HorizontalScrollView/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.RadioButton') #点击底导上的首页
-		print ele1
-		print len(ele1)
-		ele1[3].click();
-		sleep(5)
+		ele1[0].click()
+		sleep(2)
+		ele1[1].click()
+		sleep(2)
+		ele1[2].click()
+		sleep(2)
+		for i in range(0,12):
+			ele1[3].click()
+			sleep(2)
+		ele1[4].click()
+		sleep(2)
+		ele1[4].click()
+		sleep(2)
 		
 		
 		
@@ -89,8 +98,8 @@ class MPHotpage(unittest.TestCase):
 		
 def suite(self):
 	suite = unittest.TestSuite()  
-	#suite.addTest(MPHotpage('click_shouye_rebang_faxian_wo'))
-	#suite.addTest(MPHotpage('switch_category_at_shouye_by_slide'))
+	suite.addTest(MPHotpage('click_shouye_rebang_faxian_wo'))
+	suite.addTest(MPHotpage('switch_category_at_shouye_by_slide'))
 	suite.addTest(MPHotpage('switch_category_at_shouye_by_click'))
 	runner = unittest.TextTestRunner()  
 	runner.run(suite)
