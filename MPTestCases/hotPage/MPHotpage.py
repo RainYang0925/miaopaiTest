@@ -74,8 +74,21 @@ class MPHotpage(unittest.TestCase):
 			sleep(2)
 		ele1[4].click()
 		sleep(2)
-		ele1[4].click()
+		ele1[5].click()
 		sleep(2)
+
+	def switch_Opencategory_at_shouye_by_click(self):
+		'''首页平道分类测试
+		1、点击切换完首页展开的频道分类
+		'''
+		print 'start switch_Opencategory_at_shouye_by_click test ...  '
+		self.init_case()
+		sleep(5)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/more').click() #点击展开频道更多
+		sleep(2)
+		ele = self.driver.find_elements_by_id('com.yixia.videoeditor:id/draggridview')
+		print len(ele)
+		
 		
 		
 		
@@ -98,8 +111,9 @@ class MPHotpage(unittest.TestCase):
 		
 def suite(self):
 	suite = unittest.TestSuite()  
-	suite.addTest(MPHotpage('click_shouye_rebang_faxian_wo'))
-	suite.addTest(MPHotpage('switch_category_at_shouye_by_slide'))
-	suite.addTest(MPHotpage('switch_category_at_shouye_by_click'))
+	#suite.addTest(MPHotpage('click_shouye_rebang_faxian_wo'))
+	#suite.addTest(MPHotpage('switch_category_at_shouye_by_slide'))
+	#suite.addTest(MPHotpage('switch_category_at_shouye_by_click'))
+	suite.addTest(MPHotpage('switch_Opencategory_at_shouye_by_click'))
 	runner = unittest.TextTestRunner()  
 	runner.run(suite)
