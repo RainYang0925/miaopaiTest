@@ -8,6 +8,7 @@ from time import sleep
 class MPsetting(unittest.TestCase):
 	def __init__(self,methodName):
 		unittest.TestCase.__init__(self, methodName)
+		print "************************** MPsetting test **************************"
 
 	def init_case(self):
 		#处理开屏广告是否存在的情况

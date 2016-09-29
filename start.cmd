@@ -1,4 +1,2 @@
-@echo off
-powershell "python startTest.py | tee test.log"
-
+python startTest.py >> test.log 2>&1 
 pause

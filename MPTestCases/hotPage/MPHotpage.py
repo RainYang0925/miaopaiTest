@@ -8,6 +8,7 @@ from time import sleep
 class MPHotpage(unittest.TestCase):
 	def __init__(self,methodName):
 		unittest.TestCase.__init__(self, methodName)
+		print "************************** MPHotpage test **************************"
 		
 	def init_case(self):
 		#处理开屏广告是否存在的情况
@@ -85,12 +86,22 @@ class MPHotpage(unittest.TestCase):
 		self.init_case()
 		sleep(5)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/more').click() #点击展开频道更多
-		sleep(2)
-		ele = self.driver.find_elements_by_id('com.yixia.videoeditor:id/draggridview')
-		print len(ele)
-		
-		
-		
+		sleep(1)
+		ele = self.driver.find_elements_by_id('com.yixia.videoeditor:id/icon')
+		for i in range(0,14):
+			ele[i].click()
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/more').click() #点击展开频道更多
+			sleep(1)
+		self.driver.swipe(500, 900, 500, 300) #向上滑动
+		ele = self.driver.find_elements_by_id('com.yixia.videoeditor:id/icon')
+		ele[len(ele) - 1].click()
+		sleep(1)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/more').click() #点击展开频道更多
+		sleep(1)
+		ele[len(ele) - 2].click()
+		sleep(1)
+
 		
 	def switch_category_at_shouye_by_slide(self):
 		'''切换分类页面
