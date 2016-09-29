@@ -102,6 +102,22 @@ class MPHotpage(unittest.TestCase):
 		ele[len(ele) - 2].click()
 		sleep(1)
 
+
+	def drag_to_change_category_order(self):
+		'''首页平道分类测试
+		1、改变首页分类的顺序
+		'''
+		print 'start drag_to_change_category_order test ...  '
+		self.init_case()
+		sleep(5)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/more').click() #点击展开频道更多
+		sleep(1)
+		ele = self.driver.find_elements_by_id('com.yixia.videoeditor:id/icon')
+		for i in range(0,2):
+			self.driver.drag_and_drop(ele[2],ele[4])
+			sleep(1)
+		sleep(2)
+
 		
 	def switch_category_at_shouye_by_slide(self):
 		'''切换分类页面
@@ -125,6 +141,7 @@ def suite(self):
 	#suite.addTest(MPHotpage('click_shouye_rebang_faxian_wo'))
 	#suite.addTest(MPHotpage('switch_category_at_shouye_by_slide'))
 	#suite.addTest(MPHotpage('switch_category_at_shouye_by_click'))
-	suite.addTest(MPHotpage('switch_Opencategory_at_shouye_by_click'))
+	#suite.addTest(MPHotpage('switch_Opencategory_at_shouye_by_click'))
+	suite.addTest(MPHotpage('drag_to_change_category_order'))
 	runner = unittest.TextTestRunner()  
 	runner.run(suite)

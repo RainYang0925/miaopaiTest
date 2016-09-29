@@ -20,6 +20,6 @@ import MPHotpage
 
 #MPlogin.suite("0")
 #MPshoot.suite("0")
-MPTest.suite("0")
-MPsetting.suite("0")
+#MPTest.suite("0")
+#MPsetting.suite("0")
 MPHotpage.suite("0")
