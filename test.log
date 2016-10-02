@@ -1,106 +1,26 @@
 E************************** MPHotpage test **************************
-start drag_to_change_category_order test ...  
+start switch_Opencategory_at_shouye_by_click test ...  
 end ... 
 
 ======================================================================
-ERROR: drag_to_change_category_order (MPHotpage.MPHotpage)
+ERROR: switch_Opencategory_at_shouye_by_click (MPHotpage.MPHotpage)
 首页平道分类测试
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "D:\myProgram\pythonProgram\miaopaiTest\MPTestCases\hotPage\MPHotpage.py", line 117, in drag_to_change_category_order
-    driver.drag_and_drop(ele[14],ele[2])
-NameError: global name 'driver' is not defined
+  File "D:\git\miaopaiTest\MPTestCases\hotPage\MPHotpage.py", line 111, in switch_Opencategory_at_shouye_by_click
+    self.driver.find_element_by_xpath('//android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.ImageView').click() #点击关闭全部平道面板
+  File "C:\Python27\lib\site-packages\selenium-3.0.0b3-py2.7.egg\selenium\webdriver\remote\webdriver.py", line 293, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Python27\lib\site-packages\selenium-3.0.0b3-py2.7.egg\selenium\webdriver\remote\webdriver.py", line 752, in find_element
+    'value': value})['value']
+  File "C:\Python27\lib\site-packages\selenium-3.0.0b3-py2.7.egg\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "build\bdist.win-amd64\egg\appium\webdriver\errorhandler.py", line 29, in check_response
+    raise wde
+NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
+
 
 ----------------------------------------------------------------------
-Ran 1 test in 21.523s
+Ran 1 test in 78.637s
 
 FAILED (errors=1)
-.************************** MPHotpage test **************************
-start drag_to_change_category_order test ...  
-end ... 
-
-----------------------------------------------------------------------
-Ran 1 test in 169.837s
-
-OK
-.************************** MPHotpage test **************************
-start drag_to_change_category_order test ...  
-end ... 
-
-----------------------------------------------------------------------
-Ran 1 test in 30.832s
-
-OK
-.************************** MPHotpage test **************************
-start drag_to_change_category_order test ...  
-end ... 
-
-----------------------------------------------------------------------
-Ran 1 test in 46.963s
-
-OK
-.************************** MPHotpage test **************************
-start drag_to_change_category_order test ...  
-end ... 
-
-----------------------------------------------------------------------
-Ran 1 test in 25.994s
-
-OK
-.************************** MPHotpage test **************************
-start drag_to_change_category_order test ...  
-end ... 
-
-----------------------------------------------------------------------
-Ran 1 test in 30.016s
-
-OK
-.************************** MPHotpage test **************************
-start drag_to_change_category_order test ...  
-end ... 
-
-----------------------------------------------------------------------
-Ran 1 test in 49.931s
-
-OK
-.************************** MPHotpage test **************************
-start drag_to_change_category_order test ...  
-end ... 
-
-----------------------------------------------------------------------
-Ran 1 test in 29.632s
-
-OK
-.************************** MPHotpage test **************************
-start drag_to_change_category_order test ...  
-end ... 
-
-----------------------------------------------------------------------
-Ran 1 test in 28.984s
-
-OK
-E************************** MPHotpage test **************************
-start drag_to_change_category_order test ...  
-end ... 
-
-======================================================================
-ERROR: drag_to_change_category_order (MPHotpage.MPHotpage)
-首页平道分类测试
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "D:\myProgram\pythonProgram\miaopaiTest\MPTestCases\hotPage\MPHotpage.py", line 117, in drag_to_change_category_order
-    self.driver.drag_and_drop(ele[2],ele[4])
-IndexError: list index out of range
-
-----------------------------------------------------------------------
-Ran 1 test in 17.373s
-
-FAILED (errors=1)
-.************************** MPHotpage test **************************
-start drag_to_change_category_order test ...  
-end ... 
-
-----------------------------------------------------------------------
-Ran 1 test in 29.225s
-
-OK
