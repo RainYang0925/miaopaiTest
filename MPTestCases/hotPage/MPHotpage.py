@@ -1,7 +1,6 @@
 #coding:utf-8
 #Edit by liyuanhong 2016/4/12#
 import unittest
-import Params
 from appium import webdriver
 from time import sleep
 
@@ -107,6 +106,8 @@ class MPHotpage(unittest.TestCase):
 		sleep(1)
 		ele[len(ele) - 2].click()
 		sleep(1)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/more').click() #点击展开频道更多
+		sleep(1)
 		self.driver.find_element_by_xpath('//android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.ImageView').click() #点击关闭全部平道面板
 		sleep(2)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/more').click() #点击展开频道更多
@@ -163,5 +164,6 @@ def suite(self):
 	suite.addTest(MPHotpage('switch_category_at_shouye_by_click'))
 	suite.addTest(MPHotpage('switch_Opencategory_at_shouye_by_click'))
 	suite.addTest(MPHotpage('drag_to_change_category_order'))
+
 	runner = unittest.TextTestRunner()  
 	runner.run(suite)

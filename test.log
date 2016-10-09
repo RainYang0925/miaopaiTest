@@ -1,26 +1,20 @@
-E************************** MPHotpage test **************************
+.....************************** MPHotpage test **************************
+************************** MPHotpage test **************************
+************************** MPHotpage test **************************
+************************** MPHotpage test **************************
+************************** MPHotpage test **************************
+start click_shouye_rebang_faxian_wo test ...  
+end ... 
+start switch_category_at_shouye_by_slide test ...  
+end ... 
+start switch_category_at_shouye_by_click test ...  
+end ... 
 start switch_Opencategory_at_shouye_by_click test ...  
 end ... 
-
-======================================================================
-ERROR: switch_Opencategory_at_shouye_by_click (MPHotpage.MPHotpage)
-首页平道分类测试
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "D:\git\miaopaiTest\MPTestCases\hotPage\MPHotpage.py", line 111, in switch_Opencategory_at_shouye_by_click
-    self.driver.find_element_by_xpath('//android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.ImageView').click() #点击关闭全部平道面板
-  File "C:\Python27\lib\site-packages\selenium-3.0.0b3-py2.7.egg\selenium\webdriver\remote\webdriver.py", line 293, in find_element_by_xpath
-    return self.find_element(by=By.XPATH, value=xpath)
-  File "C:\Python27\lib\site-packages\selenium-3.0.0b3-py2.7.egg\selenium\webdriver\remote\webdriver.py", line 752, in find_element
-    'value': value})['value']
-  File "C:\Python27\lib\site-packages\selenium-3.0.0b3-py2.7.egg\selenium\webdriver\remote\webdriver.py", line 236, in execute
-    self.error_handler.check_response(response)
-  File "build\bdist.win-amd64\egg\appium\webdriver\errorhandler.py", line 29, in check_response
-    raise wde
-NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
-
+start drag_to_change_category_order test ...  
+end ... 
 
 ----------------------------------------------------------------------
-Ran 1 test in 78.637s
+Ran 5 tests in 294.666s
 
-FAILED (errors=1)
+OK
