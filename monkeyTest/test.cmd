@@ -10,8 +10,12 @@ rem  -v  默认选项 ，仅提供启动提示、测试完成和最终结果等少量信息
 rem  -v -v 提供较为详细的日志，包括每个发送到Activity的事件信息
 rem  -v -v -v最详细的日志，包括了测试中选中/未选中的Activity信息
 
-rem ------------------------------------------------
 
-powershell "adb shell monkey -p com.yixia.videoeditor --throttle 100 -s 10  -v -v 500 | tee monkeyTest.log"
+
+
+
+rem ----------------执行monkey测试-------------------
+
+powershell "adb shell monkey -p com.yixia.videoeditor --throttle 300 -s 10  -v -v 500 | tee monkeyTest.log"
 
 pause

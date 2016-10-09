@@ -1,5 +1,4 @@
 import unittest
-import Params
 
 class MPlogin(unittest.TestCase):
 	def setUp(self):
@@ -18,8 +17,7 @@ class MPlogin(unittest.TestCase):
 		print "test_login3"
 
 	def test_login4(self):
-		print Params.A_params
-		print Params.I_params
+		print "MPlogin";
 
 	def test_mobilePhone_login(self):
 		pass
