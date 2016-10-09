@@ -104,8 +104,8 @@ class MPsetting(unittest.TestCase):
 		sleep(5)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 		sleep(2)
-		self.driver.swipe(200,800,200,200,1000) #我的页面向上滑动
-		sleep(1)
+		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+		sleep(2)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
 		sleep(2)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/rl_language_setting').click()  #点击语言设置
@@ -166,137 +166,6 @@ class MPsetting(unittest.TestCase):
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click()  #退出手机号绑定
 		sleep(1)
 
-		'''意见反馈
-		1、意见反馈页面没有输入任何内容的情况下点击发送
-		2、输入意见反馈后点击发送
-		3、全选所有的问题点击发送
-		4、输入错误的qq号和意见点击发送
-		5、输入正确的qq号和意见点击发送
-		6、输入错误的邮箱和意见点击发送
-		7、输入正确的邮箱和意见点击发送
-		'''
-	def test_feedback(self):
-		print 'start test_feedback test ...  '
-		self.init_case()
-		sleep(5)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
-		sleep(2)
-		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
-		sleep(1)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
-		sleep(2)
-		#1、直接点击发送按钮#
-		self.driver.find_element_by_name('意见反馈').click()  #点击意见反馈
-		sleep(1)
-		self.driver.find_element_by_name('发送').click()  #点击发送按钮
-		sleep(2)
-
-		#2、输入意见反馈点击发送按钮#
-		e1 = self.driver.find_element_by_id('com.yixia.videoeditor:id/edit_idea')
-		e1.click()  #选中反馈对话框
-		sleep(1)
-		e1.send_keys('1234567890')
-		sleep(0.5)
-		self.driver.press_keycode(66)  #按回车键
-		sleep(0.5)
-		self.driver.find_element_by_name('发送').click()  #点击发送按钮
-		sleep(5)
-
-		#3、全选所有问题县级发送按钮#
-		self.driver.find_element_by_name('意见反馈').click()  #点击意见反馈
-		sleep(1)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/checkBox').click()  #选中经常闪退
-		sleep(0.5)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/checkBox2').click()  #选中无法播放
-		sleep(0.5)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/checkBox3').click()  #选中剪辑不方便
-		sleep(0.5)
-		self.driver.swipe(200,1000,200,100,1000) #向上滑动页面
-		sleep(1)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/checkBox4').click()  #选中画面不清晰
-		sleep(0.5)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/checkBox5').click()  #选中看视频卡
-		sleep(0.5)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/checkBox6').click()  #选中其他
-		sleep(0.5)
-		self.driver.find_element_by_name('发送').click()  #点击发送按钮
-		sleep(2)
-
-
-		#4、输入错误的QQ号和正确的意见反馈点击发送#
-		self.driver.find_element_by_name('意见反馈').click()  #点击意见反馈
-		sleep(1)
-		e1 = self.driver.find_element_by_id('com.yixia.videoeditor:id/edit_idea')
-		e1.click()  #选中反馈对话框
-		sleep(1)
-		e1.send_keys('1234567890')
-		sleep(0.5)
-		self.driver.press_keycode(66)  #按回车键
-		sleep(0.5)
-		self.driver.press_keycode(4)  #点击返回按钮收起键盘
-		sleep(0.5)
-		e2 = self.driver.find_element_by_id('com.yixia.videoeditor:id/qq_e_mail')
-		e2.click()  #点击您的邮箱/qq
-		sleep(0.5)
-		e2.send_keys('1234')
-		sleep(0.5)
-		#self.driver.press_keycode(66)  #按回车键
-		#sleep(0.5)
-		#self.driver.press_keycode(4)  #点击返回按钮收起键盘
-		#sleep(2)
-		self.driver.find_element_by_name('发送').click()  #点击发送按钮
-		sleep(1)
-
-		#5、输入正确的QQ号和正确的意见反馈点击发送#
-		e3 = self.driver.find_element_by_id('com.yixia.videoeditor:id/qq_e_mail')
-		e3.click()  #点击您的邮箱/qq
-		sleep(0.5)
-		e3.send_keys('1234567')
-		sleep(0.5)
-		#self.driver.press_keycode(66)  #按回车键
-		#sleep(0.5)
-		#self.driver.press_keycode(4)  #点击返回按钮收起键盘
-		#sleep(0.5)
-		self.driver.find_element_by_name('发送').click()  #点击发送按钮
-		sleep(2)
-
-		#6、输入错误的邮箱点和正确意见反馈点击发送#
-		self.driver.find_element_by_name('意见反馈').click()  #点击意见反馈
-		sleep(1)
-		e1 = self.driver.find_element_by_id('com.yixia.videoeditor:id/edit_idea')
-		e1.click()  #选中反馈对话框
-		sleep(1)
-		e1.send_keys('1234567890')
-		sleep(0.5)
-		#self.driver.press_keycode(66)  #按回车键
-		#sleep(0.5)
-		#self.driver.press_keycode(4)  #点击返回按钮收起键盘
-		#sleep(0.5)
-		e2 = self.driver.find_element_by_id('com.yixia.videoeditor:id/qq_e_mail')
-		e2.click()  #点击您的邮箱/qq
-		sleep(0.5)
-		e2.send_keys('abcd')
-		sleep(0.5)
-		self.driver.press_keycode(66)  #按回车键
-		sleep(0.5)
-		self.driver.press_keycode(4)  #点击返回按钮收起键盘
-		sleep(0.5)
-		self.driver.find_element_by_name('发送').click()  #点击发送按钮
-		sleep(1)
-
-		#7、输入正确的邮箱点和正确意见反馈点击发送#
-		e2 = self.driver.find_element_by_id('com.yixia.videoeditor:id/qq_e_mail')
-		e2.click()  #点击您的邮箱/qq
-		sleep(0.5)
-		e2.send_keys('abcd@example.com')
-		sleep(0.5)
-		self.driver.press_keycode(66)  #按回车键
-		sleep(0.5)
-		self.driver.press_keycode(4)  #点击返回按钮收起键盘
-		sleep(0.5)
-		self.driver.find_element_by_name('发送').click()  #点击发送按钮
-		sleep(2)
-		
 		'''版本检测
 		1、主要测试了版检测功能正常
 		'''
@@ -375,13 +244,12 @@ class MPsetting(unittest.TestCase):
 def suite(self):
 	suite = unittest.TestSuite()  
 	suite.addTest(MPsetting('test_into_setting_page'))
-	#suite.addTest(MPsetting('test_comment_etc'))
-	#suite.addTest(MPsetting('test_change_language'))
-	#suite.addTest(MPsetting('test_bind_mobile'))
-	#suite.addTest(MPsetting('test_feedback'))
-	#suite.addTest(MPsetting('test_version_check'))
-	#suite.addTest(MPsetting('test_clear_cache'))
-	#suite.addTest(MPsetting('test_setting_page_all_button_click'))
+	suite.addTest(MPsetting('test_comment_etc'))
+	suite.addTest(MPsetting('test_change_language'))
+	suite.addTest(MPsetting('test_bind_mobile'))
+	suite.addTest(MPsetting('test_version_check'))
+	suite.addTest(MPsetting('test_clear_cache'))
+	suite.addTest(MPsetting('test_setting_page_all_button_click'))
 
 	runner = unittest.TextTestRunner()  
 	runner.run(suite)
