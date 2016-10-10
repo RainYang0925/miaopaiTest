@@ -20,8 +20,16 @@ def getUserName(suid):
 	#print userName
 	return userName
 
+#将以毫秒为单位的时间戳转换为日期格式
+def convertToDate(timestamp):
+	#theTime = jdat['result'][i]['channel']['ext']['finishTime']
+	theDate = str(timestamp)[:-3]
+	timeArray = time.localtime(int(theDate))
+	otherStyleTime = time.strftime("%Y-%m-%d %H:%M:%S", timeArray)
+	return otherStyleTime
 
-#找首页频道超过5分钟的视频
+
+#找首页频道超过5分钟的视频*****************************************
 def testFenlei():
 	categorys = [124,128]
 	theMax = 0
@@ -47,6 +55,7 @@ def testFenlei():
 						print "时长 : " + str(theTime) + " 秒"
 						print "url : " + jdat['result'][i]['channel']['stream']['base'] + ".mp4"
 						print "time : " + jdat['result'][i]['channel']['ext']['finishTimeNice']
+						print "userName : " + jdat['result'][i]['channel']['ext']['owner']['nick']
 						print "t : " + jdat['result'][i]['channel']['ext']['t']
 						print "ft : " + jdat['result'][i]['channel']['ext']['ft']
 						print "pic : " + jdat['result'][i]['channel']['pic']['base'] + ".jpg"
@@ -63,7 +72,7 @@ def testFenlei():
 	print theMax
 
 
-#找热门超过5分钟的视频
+#找热门超过5分钟的视频****************************************
 def testHot():
 	theMax = 0
 	thecount = 1
@@ -86,7 +95,10 @@ def testHot():
 					print "channel : " + "热门" + "第 " + str(var) + "页"
 					print "时长 : " + str(theTime) + " 秒"
 					print "url : " + jdat['result'][i]['channel']['stream']['base'] + ".mp4"
-					print "time : " + jdat['result'][i]['channel']['ext']['finishTimeNice']
+					theTime = jdat['result'][i]['channel']['ext']['finishTime']
+					theDate = convertToDate(theTime)
+					print "time : " + theDate
+					print "userName : " + jdat['result'][i]['channel']['ext']['owner']['nick']
 					print "t : " + jdat['result'][i]['channel']['ext']['t']
 					print "ft : " + jdat['result'][i]['channel']['ext']['ft']
 					print "pic : " + jdat['result'][i]['channel']['pic']['base'] + ".jpg"
@@ -103,7 +115,7 @@ def testHot():
 	print theMax
 
 
-#找个人主页超过5分钟的视频
+#找个人主页超过5分钟的视频***************************************
 def testMyPage(suid):
 	theMax = 0
 	timeflag = 0
@@ -115,6 +127,7 @@ def testMyPage(suid):
 		params = urllib.urlencode({'token': 'u~p36u0UjaIvJwxYJpp1wkGdbdeX7LbL','suid':suid,'version': '6.6.0.1','timeflag':timeflag,'per':20})
 		dat = urllib.urlopen("http://api.miaopai.com/m/channel_forward_reward.json?%s" % params)
 		jdat = json.loads(dat.read())
+		timeflagOld = timeflag
 		timeflag = jdat['result']['timeflag']
 		it = jdat['result']['stream']['cnt']
 
@@ -131,12 +144,11 @@ def testMyPage(suid):
 					theMax = theTime
 				if theTime >= 300:
 					print getUserName(suid) + "第 " + str(page) + "页"
-					print 'timeFlag : ' + str(jdat['result']['timeflag'])
+					print 'timeFlag : ' + str(timeflagOld)
+					#print 'timeFlag : ' + str(jdat['result']['timeflag'])
 					print "时长 : " + str(theTime) + " 秒"
 					print "url : " + jdat['result']['stream']['list'][i]['channel']['stream']['base'] + ".mp4"
 					print "time : " + jdat['result']['stream']['list'][i]['channel']['ext']['finishTimeNice']
-					#x = time.localtime(jdat['result']['stream']['list'][i]['channel']['ext']['finishTime'])
-					#time.strftime('%Y-%m-%d %H:%M:%S',x)
 					print "t : " + jdat['result']['stream']['list'][i]['channel']['ext']['t']
 					print "ft : " + jdat['result']['stream']['list'][i]['channel']['ext']['ft']
 					print "pic : " + jdat['result']['stream']['list'][i]['channel']['pic']['base'] + ".jpg"
@@ -164,15 +176,14 @@ def testMyPage(suid):
 
 
 
-#testFenlei()
-testHot()
+testFenlei()   #频道分类测试
+#testHot()       #首页热门
 
 #suid = 'Z1fV~4uV6WRqfs3xndogdA__'   #凡益网趣的suid
 #suid = 'SBr3gTpwGbI53Lhyuz4xCg__'   #yiixia24000v的suid
 #suid = 'AkwnpO4BXM4~G5BN' #远洪88的suid
 #testMyPage(suid)
 
-#getUserName('Z1fV~4uV6WRqfs3xndogdA__')
 
 
 
@@ -181,10 +192,31 @@ testHot()
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+########################################################################################################################################
 #http://api.miaopai.com/m/v6_hot_channel.json?token=OIynN5UcxhH082kWvIw7YWP4CTHYSeKI&refresh=3&version=6.6.0.1&page=2&per=20   #热门接口
 #http://api.miaopai.com/m/cate2_channel.json?cateid=128&token=OIynN5UcxhH082kWvIw7YWP4CTHYSeKI&version=6.6.0.1&page=1&per=20   #频道接口
 #http://api.miaopai.com/m/channel_forward_reward.json?token=u~p36u0UjaIvJwxYJpp1wkGdbdeX7LbL&suid=Z1fV~4uV6WRqfs3xndogdA__&version=6.6.0.1&timeflag=1475982730748&per=20 #个人主页
 #http://api.miaopai.com/m/space_user_info.json?token=u~p36u0UjaIvJwxYJpp1wkGdbdeX7LbL&version=6.6.0.1&suid=Z1fV~4uV6WRqfs3xndogdA__  #个人页面个人信息
+
+#个人主页 ---- 可测试
+#悬赏列表 ---- 可测试
 
 
 
