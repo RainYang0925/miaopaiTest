@@ -7,3 +7,5 @@ MPTestCases目录存放appium的测试用例
 start.cmd用于启动appium测试
 startTest.py配置了要执行的测试用例
 app目录用于存放要测试的应用
+
+testTools存放了一些其他测试用的辅助脚本
