@@ -167,6 +167,12 @@ def testMyPage(suid):
 
 
 
+#找悬赏列表超过5分钟的视频***************************************
+def testRewordList():
+	theMax = 0
+	page = 1
+	thecount = 1
+	rewordId = 0
 
 
 
@@ -176,13 +182,14 @@ def testMyPage(suid):
 
 
 
-testFenlei()   #频道分类测试
+#testFenlei()   #频道分类测试
 #testHot()       #首页热门
 
 #suid = 'Z1fV~4uV6WRqfs3xndogdA__'   #凡益网趣的suid
 #suid = 'SBr3gTpwGbI53Lhyuz4xCg__'   #yiixia24000v的suid
 #suid = 'AkwnpO4BXM4~G5BN' #远洪88的suid
-#testMyPage(suid)
+suid = 'akaD2btl9Mvyf0MS'
+testMyPage(suid)
 
 
 
@@ -215,8 +222,19 @@ testFenlei()   #频道分类测试
 #http://api.miaopai.com/m/channel_forward_reward.json?token=u~p36u0UjaIvJwxYJpp1wkGdbdeX7LbL&suid=Z1fV~4uV6WRqfs3xndogdA__&version=6.6.0.1&timeflag=1475982730748&per=20 #个人主页
 #http://api.miaopai.com/m/space_user_info.json?token=u~p36u0UjaIvJwxYJpp1wkGdbdeX7LbL&version=6.6.0.1&suid=Z1fV~4uV6WRqfs3xndogdA__  #个人页面个人信息
 
-#个人主页 ---- 可测试
+
 #悬赏列表 ---- 可测试
+#关注页面 ---- 可测试 ----  有方法
+#同城页面 ---- 可测试
+#话题页面 ---- 可测试 ----  有方法
+#悬赏页面 ---- 可测试
+#视频合集 ---- 可测试
+#搜索页面 ---- 可测试 ----  有方法
+#个人主页 ---- 可测试 ----  ok
+#热榜页面 ---- 可测试 ----  ok（最后一个视频都不在8月1号之前）
+#频道分类页面 
+#发现页面 ---- 排除（只包含话题和合集）
+#频道达人视频封面 ----  可测试 ----  有方法（后台配置一个大于5分钟的视频）
 
 
 
