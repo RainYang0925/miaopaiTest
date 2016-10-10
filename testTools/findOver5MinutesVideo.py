@@ -168,11 +168,185 @@ def testMyPage(suid):
 
 
 #找悬赏列表超过5分钟的视频***************************************
-def testRewordList():
+def testRewordList(srwid):
 	theMax = 0
 	page = 1
 	thecount = 1
 	rewordId = 0
+	pageIndex = 1
+	while True:
+		params = urllib.urlencode({'token': 'u~p36u0UjaIvJwxYJpp1wkGdbdeX7LbL','filter':'all','version': '6.6.0.1','srwid':srwid,'pageIndex':pageIndex,'pageSize':10})
+		dat = urllib.urlopen("http://api.miaopai.com/m/getRewardVideos.json?%s" % params)
+		jdat = json.loads(dat.read())
+		videos = len(jdat['result']['list'])
+		if(videos == 0):
+			break
+		else:
+			#print "continue"
+			it = jdat['result']['listSize']
+			for i in range(0,videos):
+				theTime = jdat['result']['list'][i]['channel']['ext']['length']
+				#print theTime
+				if theTime > theMax:
+					theMax = theTime
+				if theTime >= 300:
+					print "第 : " + str(pageIndex) + "页"
+					print "时长 : " + str(theTime) + " 秒"
+					print "url : " + jdat['result']['list'][i]['channel']['stream']['base'] + ".mp4"
+					theTime = jdat['result']['list'][i]['channel']['ext']['finishTime']
+					theDate = convertToDate(theTime)
+					print "time : " + theDate
+					print "userName : " + jdat['result']['list'][i]['channel']['ext']['owner']['nick']
+					print "t : " + jdat['result']['list'][i]['channel']['ext']['t']
+					print "ft : " + jdat['result']['list'][i]['channel']['ext']['ft']
+					print "pic : " + jdat['result']['list'][i]['channel']['pic']['base'] + ".jpg"
+					print "***********************************************"
+					print ""
+				else:
+					print str(thecount) + "  --  this video is less than 300 seconds !"
+				thecount = thecount + 1
+			pageIndex = pageIndex + 1
+		sleep(2)
+	print ""
+	print ""
+	print ""
+	print "the max is : "
+	print theMax
+
+
+#合集页面视频时长测试***************************************
+def testVideoColloctions(stpid):
+	theMax = 0
+	page = 1
+	thecount = 1
+	while True:
+		params = urllib.urlencode({'token': 'u~p36u0UjaIvJwxYJpp1wkGdbdeX7LbL','type':'0','version': '6.6.0.1','stpid':stpid,'page':page,'per':20})
+		dat = urllib.urlopen("http://api.miaopai.com/m/v2_topic.json?%s" % params)
+		jdat = json.loads(dat.read())
+		videos = len(jdat['result'])
+		if(videos == 0):
+			break
+		else:
+			#print "continue"
+			it = jdat['per']
+			for i in range(0,videos):
+				theTime = jdat['result'][i]['channel']['ext']['length']
+				#print theTime
+				if theTime > theMax:
+					theMax = theTime
+				if theTime >= 300:
+					print "第 : " + str(page) + "页"
+					print "时长 : " + str(theTime) + " 秒"
+					print "url : " + jdat['result'][i]['channel']['stream']['base'] + ".mp4"
+					theTime = jdat['result'][i]['channel']['ext']['finishTime']
+					theDate = convertToDate(theTime)
+					print "time : " + theDate
+					print "userName : " + jdat['result'][i]['channel']['ext']['owner']['nick']
+					print "t : " + jdat['result'][i]['channel']['ext']['t']
+					print "ft : " + jdat['result'][i]['channel']['ext']['ft']
+					print "pic : " + jdat['result'][i]['channel']['pic']['base'] + ".jpg"
+					print "***********************************************"
+					print ""
+				else:
+					print str(thecount) + "  --  this video is less than 300 seconds !"
+				thecount = thecount + 1
+			page = page + 1
+		sleep(2)
+	print ""
+	print ""
+	print ""
+	print "the max is : "
+	print theMax
+
+
+
+#话题页面视频时长测试***************************************
+def testTopic(topicname):
+	theMax = 0
+	page = 1
+	thecount = 1
+	while True:
+		params = urllib.urlencode({'token': 'u~p36u0UjaIvJwxYJpp1wkGdbdeX7LbL','type':'2','version': '6.6.0.1','topicname':topicname,'page':page,'per':20})
+		dat = urllib.urlopen("http://api.miaopai.com/m/v2_topic.json?%s" % params)
+		jdat = json.loads(dat.read())
+		videos = len(jdat['result'])
+		if(videos == 0):
+			break
+		else:
+			#print "continue"
+			it = jdat['per']
+			for i in range(0,videos):
+				theTime = jdat['result'][i]['channel']['ext']['length']
+				#print theTime
+				if theTime > theMax:
+					theMax = theTime
+				if theTime >= 300:
+					print "第 : " + str(page) + "页"
+					print "时长 : " + str(theTime) + " 秒"
+					print "url : " + jdat['result'][i]['channel']['stream']['base'] + ".mp4"
+					theTime = jdat['result'][i]['channel']['ext']['finishTime']
+					theDate = convertToDate(theTime)
+					print "time : " + theDate
+					print "userName : " + jdat['result'][i]['channel']['ext']['owner']['nick']
+					print "t : " + jdat['result'][i]['channel']['ext']['t']
+					print "ft : " + jdat['result'][i]['channel']['ext']['ft']
+					print "pic : " + jdat['result'][i]['channel']['pic']['base'] + ".jpg"
+					print "***********************************************"
+					print ""
+				else:
+					print str(thecount) + "  --  this video is less than 300 seconds !"
+				thecount = thecount + 1
+			page = page + 1
+		sleep(2)
+	print ""
+	print ""
+	print ""
+	print "the max is : "
+	print theMax
+
+
+#找同城超过5分钟的视频*****************************************
+def testSameCity(orderby):
+	theMax = 0
+	thecount = 1
+	for var in range(1,10):
+		#首页各个频道
+		params = urllib.urlencode({'token': 'OIynN5UcxhH082kWvIw7YWP4CTHYSeKI', 'version': '6.6.0.1','page': var,'per':20,'orderby':orderby})
+		dat = urllib.urlopen("http://api.miaopai.com/m/samecity_v6.json?%s" % params)
+		jdat = json.loads(dat.read())
+		it = jdat['per']
+		for i in range(0,it):
+			judge = jdat['result'][i].has_key('color')
+			if judge:
+				pass
+			else:
+				theTime = jdat['result'][i]['channel']['ext']['length']
+				#print theTime
+				if theTime > theMax:
+					theMax = theTime
+				if theTime >= 300:
+					print "同城 : " + "第 " + str(var) + "页"
+					print "时长 : " + str(theTime) + " 秒"
+					print "url : " + jdat['result'][i]['channel']['stream']['base'] + ".mp4"
+					print "time : " + jdat['result'][i]['channel']['ext']['finishTimeNice']
+					print "userName : " + jdat['result'][i]['channel']['ext']['owner']['nick']
+					try:
+						print "t : " + jdat['result'][i]['channel']['ext']['t']
+						print "ft : " + jdat['result'][i]['channel']['ext']['ft']
+					except:
+						print "f和ft字段包含特殊字符"
+					print "pic : " + jdat['result'][i]['channel']['pic']['base'] + ".jpg"
+					print "***********************************************"
+					print ""
+				else:
+					print str(thecount) + "  --  this video is less than 300 seconds !"
+				thecount = thecount + 1
+		sleep(2)
+	print ""
+	print ""
+	print ""
+	print "the max is : "
+	print theMax
 
 
 
@@ -180,31 +354,35 @@ def testRewordList():
 
 
 
-
-
+#------------------------------------------
 #testFenlei()   #频道分类测试
+
+#------------------------------------------
 #testHot()       #首页热门
 
+#------------------------------------------
 #suid = 'Z1fV~4uV6WRqfs3xndogdA__'   #凡益网趣的suid
 #suid = 'SBr3gTpwGbI53Lhyuz4xCg__'   #yiixia24000v的suid
 #suid = 'AkwnpO4BXM4~G5BN' #远洪88的suid
-suid = 'akaD2btl9Mvyf0MS'
-testMyPage(suid)
+#suid = 'akaD2btl9Mvyf0MS'
+#testMyPage(suid)       #个人页面
 
+#-------------------------------------------
+#srwid = '3YeQfHL5~AlcXzrK'    
+#testRewordList(srwid)       #悬赏页面
 
+#-------------------------------------------
+#stpid = 'GNIlmdwJfZyvWMqt'    
+#testVideoColloctions(stpid)    #h合集页面
 
+#-------------------------------------------
+#topicname = '王宝强指妻子出轨'    
+#testTopic(topicname)              #话题页面
 
-
-
-
-
-
-
-
-
-
-
-
+#-------------------------------------------
+#orderby = 'bscore'    #颜值
+orderby = 'hot'    #热度
+testSameCity(orderby)   #同城页面那
 
 
 
@@ -221,13 +399,19 @@ testMyPage(suid)
 #http://api.miaopai.com/m/cate2_channel.json?cateid=128&token=OIynN5UcxhH082kWvIw7YWP4CTHYSeKI&version=6.6.0.1&page=1&per=20   #频道接口
 #http://api.miaopai.com/m/channel_forward_reward.json?token=u~p36u0UjaIvJwxYJpp1wkGdbdeX7LbL&suid=Z1fV~4uV6WRqfs3xndogdA__&version=6.6.0.1&timeflag=1475982730748&per=20 #个人主页
 #http://api.miaopai.com/m/space_user_info.json?token=u~p36u0UjaIvJwxYJpp1wkGdbdeX7LbL&version=6.6.0.1&suid=Z1fV~4uV6WRqfs3xndogdA__  #个人页面个人信息
+#http://api.miaopai.com/m/getRewardVideos.json?filter=all&srwid=0v8jWapHanpBaPhk&token=u~p36u0UjaIvJwxYJpp1wkGdbdeX7LbL&pageSize=10&pageIndex=1&version=6.6.0.1  #悬赏全部视频列表
+
+#合集与话题的区别在于合集有（type=0,stpid,topicname）话题有（type=2,topicname）;话题缺少topicname参数无法获取数据
+#http://api.miaopai.com/m/v2_topic.json?topicname=%E7%8E%8B%E5%AE%9D%E5%BC%BA%E6%8C%87%E5%A6%BB%E5%AD%90%E5%87%BA%E8%BD%A8&token=u~p36u0UjaIvJwxYJpp1wkGdbdeX7LbL&version=6.6.0.1&page=1&type=0&per=20&stpid=GNIlmdwJfZyvWMqt  #视频合集王宝强指责妻子出轨
+#http://api.miaopai.com/m/v2_topic.json?topicname=%E7%8E%8B%E5%AE%9D%E5%BC%BA%E6%8C%87%E5%A6%BB%E5%AD%90%E5%87%BA%E8%BD%A8&token=u~p36u0UjaIvJwxYJpp1wkGdbdeX7LbL&version=6.6.0.1&page=1&type=2&per=20  #话题王宝强指责妻子出轨
+#http://api.miaopai.com/m/samecity_v6.json?token=u~p36u0UjaIvJwxYJpp1wkGdbdeX7LbL&orderby=bscore&version=6.6.0.1&page=1&per=20  #同城测试
 
 
-#悬赏列表 ---- 可测试
+#悬赏列表 ---- 可测试 ----  有方法
 #关注页面 ---- 可测试 ----  有方法
 #同城页面 ---- 可测试
 #话题页面 ---- 可测试 ----  有方法
-#悬赏页面 ---- 可测试
+#悬赏页面 ---- 可测试 ----  有方法
 #视频合集 ---- 可测试
 #搜索页面 ---- 可测试 ----  有方法
 #个人主页 ---- 可测试 ----  ok
