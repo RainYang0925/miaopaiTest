@@ -31,16 +31,17 @@ def convertToDate(timestamp):
 
 #找首页频道超过5分钟的视频*****************************************
 def testFenlei():
-	categorys = [124,128]
+	categorys = [114]
 	theMax = 0
 	thecount = 1
 	for cat in categorys:
-		for var in range(1,4):
+		for var in range(1,2000):
 			#首页各个频道
 			params = urllib.urlencode({'cateid': cat, 'token': 'OIynN5UcxhH082kWvIw7YWP4CTHYSeKI', 'version': '6.6.0.1','page': var,'per':20})
 			dat = urllib.urlopen("http://api.miaopai.com/m/cate2_channel.json?%s" % params)
 			jdat = json.loads(dat.read())
-			it = jdat['per']
+			#it = jdat['per']
+			it = len(jdat['result'])
 			for i in range(0,it):
 				judge = jdat['result'][i].has_key('color')
 				if judge:
@@ -56,8 +57,11 @@ def testFenlei():
 						print "url : " + jdat['result'][i]['channel']['stream']['base'] + ".mp4"
 						print "time : " + jdat['result'][i]['channel']['ext']['finishTimeNice']
 						print "userName : " + jdat['result'][i]['channel']['ext']['owner']['nick']
-						print "t : " + jdat['result'][i]['channel']['ext']['t']
-						print "ft : " + jdat['result'][i]['channel']['ext']['ft']
+						try:
+							print "t : " + jdat['result'][i]['channel']['ext']['t']
+							print "ft : " + jdat['result'][i]['channel']['ext']['ft']
+						except:
+							print "t和ft字段包含特殊字符"
 						print "pic : " + jdat['result'][i]['channel']['pic']['base'] + ".jpg"
 						print "***********************************************"
 						print ""
@@ -76,12 +80,13 @@ def testFenlei():
 def testHot():
 	theMax = 0
 	thecount = 1
-	for var in range(1,10):
+	for var in range(1,2000):
 		#首页热门
 		params = urllib.urlencode({'token': 'OIynN5UcxhH082kWvIw7YWP4CTHYSeKI', 'version': '6.6.0.1','page': var,'per':20})
 		dat = urllib.urlopen("http://api.miaopai.com/m/v6_hot_channel.json?%s" % params)
 		jdat = json.loads(dat.read())
-		it = jdat['per']
+		#it = jdat['per']
+		it = len(jdat['result'])
 		for i in range(0,it):
 			judge = jdat['result'][i].has_key('color')
 			if judge:
@@ -99,8 +104,11 @@ def testHot():
 					theDate = convertToDate(theTime)
 					print "time : " + theDate
 					print "userName : " + jdat['result'][i]['channel']['ext']['owner']['nick']
-					print "t : " + jdat['result'][i]['channel']['ext']['t']
-					print "ft : " + jdat['result'][i]['channel']['ext']['ft']
+					try:
+						print "t : " + jdat['result'][i]['channel']['ext']['t']
+						print "ft : " + jdat['result'][i]['channel']['ext']['ft']
+					except:
+						print "t和ft字段存在特殊编码"
 					print "pic : " + jdat['result'][i]['channel']['pic']['base'] + ".jpg"
 					print "***********************************************"
 					print ""
@@ -197,8 +205,14 @@ def testRewordList(srwid):
 					theDate = convertToDate(theTime)
 					print "time : " + theDate
 					print "userName : " + jdat['result']['list'][i]['channel']['ext']['owner']['nick']
-					print "t : " + jdat['result']['list'][i]['channel']['ext']['t']
-					print "ft : " + jdat['result']['list'][i]['channel']['ext']['ft']
+					try:
+						print "t : " + jdat['result']['list'][i]['channel']['ext']['t']
+					except:
+						print "t字段有特殊字符"
+					try:
+						print "ft : " + jdat['result']['list'][i]['channel']['ext']['ft']
+					except:
+						print "ft字段有特殊字符"
 					print "pic : " + jdat['result']['list'][i]['channel']['pic']['base'] + ".jpg"
 					print "***********************************************"
 					print ""
@@ -355,7 +369,7 @@ def testSameCity(orderby):
 
 
 #------------------------------------------
-#testFenlei()   #频道分类测试
+testFenlei()   #频道分类测试
 
 #------------------------------------------
 #testHot()       #首页热门
@@ -364,11 +378,11 @@ def testSameCity(orderby):
 #suid = 'Z1fV~4uV6WRqfs3xndogdA__'   #凡益网趣的suid
 #suid = 'SBr3gTpwGbI53Lhyuz4xCg__'   #yiixia24000v的suid
 #suid = 'AkwnpO4BXM4~G5BN' #远洪88的suid
-#suid = 'akaD2btl9Mvyf0MS'
+#suid = 'UC8~DcL92i-1pEnO'
 #testMyPage(suid)       #个人页面
 
 #-------------------------------------------
-#srwid = '3YeQfHL5~AlcXzrK'    
+#srwid = 'XrEmnRLbfqQ_'    
 #testRewordList(srwid)       #悬赏页面
 
 #-------------------------------------------
@@ -381,8 +395,8 @@ def testSameCity(orderby):
 
 #-------------------------------------------
 #orderby = 'bscore'    #颜值
-orderby = 'hot'    #热度
-testSameCity(orderby)   #同城页面那
+#orderby = 'hot'    #热度
+#testSameCity(orderby)   #同城页面那
 
 
 
@@ -409,7 +423,7 @@ testSameCity(orderby)   #同城页面那
 
 #悬赏列表 ---- 可测试 ----  有方法
 #关注页面 ---- 可测试 ----  有方法
-#同城页面 ---- 可测试
+#同城页面 ---- 可测试 
 #话题页面 ---- 可测试 ----  有方法
 #悬赏页面 ---- 可测试 ----  有方法
 #视频合集 ---- 可测试
