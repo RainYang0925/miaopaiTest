@@ -369,7 +369,7 @@ def testSameCity(orderby):
 
 
 #------------------------------------------
-testFenlei()   #频道分类测试
+#testFenlei()   #频道分类测试
 
 #------------------------------------------
 #testHot()       #首页热门
@@ -378,7 +378,7 @@ testFenlei()   #频道分类测试
 #suid = 'Z1fV~4uV6WRqfs3xndogdA__'   #凡益网趣的suid
 #suid = 'SBr3gTpwGbI53Lhyuz4xCg__'   #yiixia24000v的suid
 #suid = 'AkwnpO4BXM4~G5BN' #远洪88的suid
-#suid = 'UC8~DcL92i-1pEnO'
+#suid = 'muQzRaQTXu5dFPbf'
 #testMyPage(suid)       #个人页面
 
 #-------------------------------------------
@@ -386,11 +386,11 @@ testFenlei()   #频道分类测试
 #testRewordList(srwid)       #悬赏页面
 
 #-------------------------------------------
-#stpid = 'GNIlmdwJfZyvWMqt'    
-#testVideoColloctions(stpid)    #h合集页面
+stpid = 'wOMjeIvel9HFcvUi'    
+testVideoColloctions(stpid)    #合集页面
 
 #-------------------------------------------
-#topicname = '王宝强指妻子出轨'    
+#topicname = '半月朋友'    
 #testTopic(topicname)              #话题页面
 
 #-------------------------------------------

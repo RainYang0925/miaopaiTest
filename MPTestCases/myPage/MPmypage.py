@@ -192,7 +192,7 @@ class MPmypage(unittest.TestCase):
 		self.driver.find_element_by_name('申请认证').click()  #点击申请认证
 		sleep(2)
 		self.driver.press_keycode('4')  #点击返回按钮返回到我的页面
-		sleep(2)
+		sleep(3)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/videos_layout').click()  #点击整条视频缩略图区域进入我的个人主页
 		sleep(2)
 		self.driver.press_keycode('4')  #点击返回按钮返回到我的页面
