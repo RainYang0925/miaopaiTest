@@ -9,6 +9,7 @@ sys.path.append(curDir + '\\MPTestCases\\shoot')
 sys.path.append(curDir + '\\MPTestCases\\settingPage')
 sys.path.append(curDir + '\\MPTestCases\\hotPage')
 sys.path.append(curDir + '\\MPTestCases\\myPage')
+sys.path.append(curDir + '\\MPTestCases\\detailPage')
 
 
 import MPlogin
@@ -16,10 +17,12 @@ import MPshoot
 import MPsetting
 import MPHotpage
 import MPmypage
+import MPdetailPage
 
 
 #MPlogin.suite("0")
 #MPshoot.suite("0")
 #MPsetting.suite("0")
 #MPHotpage.suite("0")
-MPmypage.suite("0")
+#MPmypage.suite("0")
+MPdetailPage.suite("0")

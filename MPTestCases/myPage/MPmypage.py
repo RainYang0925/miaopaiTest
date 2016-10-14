@@ -175,6 +175,7 @@ class MPmypage(unittest.TestCase):
 		sleep(2)
 
 
+	#测试我的页面，顶部信息栏元素的点击
 	def test_mypage_topinfo_click(self):
 		print 'start test_mypage_topinfo_click test ...  '
 		self.init_case()  #处理开屏广告是否存在
@@ -198,6 +199,111 @@ class MPmypage(unittest.TestCase):
 		self.driver.press_keycode('4')  #点击返回按钮返回到我的页面
 		sleep(2)
 
+	#点击完我的页面下，用户信息栏下的所有选项
+	def test_mypage_under_tipinfo_items_click(self):
+		print 'start test_mypage_under_tipinfo_items_click test ...  '
+		self.init_case()  #处理开屏广告是否存在
+		sleep(5)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click()  #点击底导上的我进入我的页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/follow_layout').click()  #点击进入关注列表页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click()  #点击返回到我的页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/fans_layout').click()  #点击粉丝进入到粉丝列表页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click()  #点击返回到我的页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/message_layout').click()  #点击进入消息通知页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click()  #点击返回到我的页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/push_layout').click()  #点击进入今日推送页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click()  #点击返回到我的页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/free_videos_layout').click()  #点击进入免流量视频页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click()  #点击返回到我的页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/likevideos_layout').click()  #点击进入赞过的视频页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click()  #点击返回到我的页面
+		sleep(2)
+		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+		sleep(1)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/video_history_layout').click()  #点击进入播放历史页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click()  #点击返回到我的页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/draft_layout').click()  #点击进草稿箱页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click()  #点击返回到我的页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/topic_layout').click()  #点击进入我关注的话题页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click()  #点击返回到我的页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/money_layout').click()  #点击进入红包页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click()  #点击返回到我的页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/reward_layout').click()  #点击进入悬赏页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click()  #点击返回到我的页面
+		sleep(2)
+		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+		sleep(1)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/feedback_layout').click()  #点击进入吐槽不爽页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click()  #点击返回到我的页面
+		sleep(2)
+		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+		sleep(1)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click()  #点击进入设置页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click()  #点击返回到我的页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_feed').click()  #点击回到热门页面
+		sleep(2)
+
+	#点击完消息页面的所有item项
+	def test_message_items_all_click(self):
+		print 'start test_message_items_all_click test ...  '
+		self.init_case()  #处理开屏广告是否存在
+		sleep(5)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click()  #点击底导上的我进入我的页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/message_layout').click()  #点击进入消息通知页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/rl_newfriend').click()  #点击进入新的好友消息页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click()  #点击返回到消息页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/rl_like').click()  #点击进入赞页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click()  #点击返回到消息页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/rl_comment').click()  #点击进入评论消息页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click()  #点击返回到消息页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/rl_at').click()  #点击进入@我的消息页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click()  #点击返回到消息页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/rl_notification').click()  #点击进入系统消息页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click()  #点击返回到消息页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click()  #点击返回到我的页面
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_feed').click()  #点击回到热门页面
+		sleep(2)
+
+
+
+
 
 
 
@@ -206,7 +312,7 @@ def suite(self):
 	suite = unittest.TestSuite()  
 	#测试意见反馈功能
 	#suite.addTest(MPmypage('test_feedback'))
-	suite.addTest(MPmypage('test_mypage_topinfo_click'))
+	suite.addTest(MPmypage('test_message_items_all_click'))
 
 	runner = unittest.TextTestRunner()  
 	runner.run(suite)
