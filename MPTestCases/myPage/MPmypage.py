@@ -311,7 +311,9 @@ class MPmypage(unittest.TestCase):
 def suite(self):
 	suite = unittest.TestSuite()  
 	#测试意见反馈功能
-	#suite.addTest(MPmypage('test_feedback'))
+	suite.addTest(MPmypage('test_feedback'))
+	suite.addTest(MPmypage('test_mypage_topinfo_click'))
+	suite.addTest(MPmypage('test_mypage_under_tipinfo_items_click'))
 	suite.addTest(MPmypage('test_message_items_all_click'))
 
 	runner = unittest.TextTestRunner()  
