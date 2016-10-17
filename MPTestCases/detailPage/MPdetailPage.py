@@ -10,7 +10,8 @@ from time import sleep
 class MPdetailPage(unittest.TestCase):
     def __init__(self,methodName):
         unittest.TestCase.__init__(self, methodName)
-        print "************************** MPHotpage test **************************"
+        print "************************** MPdetailPage test **************************"
+
     def setUp(self):
         desired_caps={}
         desired_caps['device']='android'
@@ -25,11 +26,24 @@ class MPdetailPage(unittest.TestCase):
         desired_caps['appActivity']='.ui.login.SplashActivity'
         self.driver=webdriver.Remote('http://localhost:4723/wd/hub',desired_caps)
 
+	def init_case(self):
+		#处理开屏广告是否存在的情况
+		try:
+			sleep(1)
+			el = self.driver.find_element_by_id('com.yixia.videoeditor:id/adver_imageview')   #获取开屏广告是否存在
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/textview')    #点击开屏广告上的'点击跳过'按钮
+			sleep(2)
+		except Exception,ex:
+			pass
+
     def tearDown(self):
         self.driver.quit();
         print 'end ... '
-    def check_like(self):
-        sleep(10)
+
+    def test_check_like(self):
+		print 'start test_check_like test ...  '
+		self.init_case()
+        sleep(5)
         #手机号登陆
         self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_record').click()
         sleep(5)
@@ -112,6 +126,6 @@ class MPdetailPage(unittest.TestCase):
 
 def suite(self):
     suite = unittest.TestSuite()  
-    suite.addTest(MPdetailPage('check_like'))
+    suite.addTest(MPdetailPage('test_check_like'))
     runner = unittest.TextTestRunner()  
     runner.run(suite)
