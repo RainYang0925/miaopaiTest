@@ -5,122 +5,44 @@ Ran 4 tests in 0.000s
 OK
 ...
 ----------------------------------------------------------------------
-Ran 3 tests in 0.001s
+Ran 3 tests in 0.000s
 
 OK
-EEEEEEE
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 315.781s
+
+OK
+.EE..
 ======================================================================
-ERROR: test_into_setting_page (MPsetting.MPsetting)
+ERROR: switch_category_at_shouye_by_slide (MPHotpage.MPHotpage)
+�л�����ҳ��
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "D:\myProgram\pythonProgram\miaopaiTest\MPTestCases\settingPage\MPsetting.py", line 53, in test_into_setting_page
-    self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 269, in find_element_by_id
-    return self.find_element(by=By.ID, value=id_)
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 752, in find_element
-    'value': value})['value']
+  File "D:\myProgram\pythonProgram\miaopaiTest\MPTestCases\hotPage\MPHotpage.py", line 155, in switch_category_at_shouye_by_slide
+    self.driver.swipe(50, 900, 700, 900) #���󻬶�
+  File "C:\Python27\lib\site-packages\appium\webdriver\webdriver.py", line 241, in swipe
+    action.perform()
+  File "C:\Python27\lib\site-packages\appium\webdriver\common\touch_action.py", line 94, in perform
+    self._driver.execute(Command.TOUCH_ACTION, params)
   File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
     self.error_handler.check_response(response)
   File "C:\Python27\lib\site-packages\appium\webdriver\errorhandler.py", line 29, in check_response
     raise wde
-NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
+WebDriverException: Message: An unknown server-side error occurred while processing the command.
 
 
 ======================================================================
-ERROR: test_comment_etc (MPsetting.MPsetting)
+ERROR: switch_category_at_shouye_by_click (MPHotpage.MPHotpage)
+��ҳƽ���������
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "D:\myProgram\pythonProgram\miaopaiTest\MPTestCases\settingPage\MPsetting.py", line 79, in test_comment_etc
-    self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 269, in find_element_by_id
-    return self.find_element(by=By.ID, value=id_)
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 752, in find_element
-    'value': value})['value']
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
-    self.error_handler.check_response(response)
-  File "C:\Python27\lib\site-packages\appium\webdriver\errorhandler.py", line 29, in check_response
-    raise wde
-NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
-
-
-======================================================================
-ERROR: test_change_language (MPsetting.MPsetting)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "D:\myProgram\pythonProgram\miaopaiTest\MPTestCases\settingPage\MPsetting.py", line 109, in test_change_language
-    self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 269, in find_element_by_id
-    return self.find_element(by=By.ID, value=id_)
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 752, in find_element
-    'value': value})['value']
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
-    self.error_handler.check_response(response)
-  File "C:\Python27\lib\site-packages\appium\webdriver\errorhandler.py", line 29, in check_response
-    raise wde
-NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
-
-
-======================================================================
-ERROR: test_bind_mobile (MPsetting.MPsetting)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "D:\myProgram\pythonProgram\miaopaiTest\MPTestCases\settingPage\MPsetting.py", line 162, in test_bind_mobile
-    self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 269, in find_element_by_id
-    return self.find_element(by=By.ID, value=id_)
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 752, in find_element
-    'value': value})['value']
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
-    self.error_handler.check_response(response)
-  File "C:\Python27\lib\site-packages\appium\webdriver\errorhandler.py", line 29, in check_response
-    raise wde
-NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
-
-
-======================================================================
-ERROR: test_version_check (MPsetting.MPsetting)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "D:\myProgram\pythonProgram\miaopaiTest\MPTestCases\settingPage\MPsetting.py", line 180, in test_version_check
-    self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 269, in find_element_by_id
-    return self.find_element(by=By.ID, value=id_)
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 752, in find_element
-    'value': value})['value']
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
-    self.error_handler.check_response(response)
-  File "C:\Python27\lib\site-packages\appium\webdriver\errorhandler.py", line 29, in check_response
-    raise wde
-NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
-
-
-======================================================================
-ERROR: test_clear_cache (MPsetting.MPsetting)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "D:\myProgram\pythonProgram\miaopaiTest\MPTestCases\settingPage\MPsetting.py", line 199, in test_clear_cache
-    self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 269, in find_element_by_id
-    return self.find_element(by=By.ID, value=id_)
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 752, in find_element
-    'value': value})['value']
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
-    self.error_handler.check_response(response)
-  File "C:\Python27\lib\site-packages\appium\webdriver\errorhandler.py", line 29, in check_response
-    raise wde
-NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
-
-
-======================================================================
-ERROR: test_setting_page_all_button_click (MPsetting.MPsetting)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "D:\myProgram\pythonProgram\miaopaiTest\MPTestCases\settingPage\MPsetting.py", line 237, in test_setting_page_all_button_click
-    self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 269, in find_element_by_id
-    return self.find_element(by=By.ID, value=id_)
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 752, in find_element
-    'value': value})['value']
+  File "D:\myProgram\pythonProgram\miaopaiTest\MPTestCases\hotPage\MPHotpage.py", line 74, in switch_category_at_shouye_by_click
+    ele1[3].click()
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 72, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 461, in _execute
+    return self._parent.execute(command, params)
   File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
     self.error_handler.check_response(response)
   File "C:\Python27\lib\site-packages\appium\webdriver\errorhandler.py", line 29, in check_response
@@ -129,20 +51,20 @@ NoSuchElementException: Message: An element could not be located on the page usi
 
 
 ----------------------------------------------------------------------
-Ran 7 tests in 129.921s
+Ran 5 tests in 370.970s
 
-FAILED (errors=7)
-.....
+FAILED (errors=2)
+.
 ----------------------------------------------------------------------
-Ran 5 tests in 366.672s
+Ran 1 test in 60.485s
 
 OK
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 325.850s
+Ran 4 tests in 349.830s
 
 OK
-Ftest_login1
+.test_login1
 test_login2
 test_login3
 MPlogin
@@ -185,6 +107,10 @@ start switch_Opencategory_at_shouye_by_click test ...
 end ... 
 start drag_to_change_category_order test ...  
 end ... 
+************************** MPBanner_test test **************************
+start test_banner test ...  
+6
+end ... 
 ************************** MPmypage test **************************
 ************************** MPmypage test **************************
 ************************** MPmypage test **************************
@@ -197,23 +123,12 @@ start test_mypage_under_tipinfo_items_click test ...
 end ... 
 start test_message_items_all_click test ...  
 end ... 
-************************** MPHotpage test **************************
+************************** MPdetailPage test **************************
+start test_check_like test ...  
 ...........
-double click
 end ... 
 
-======================================================================
-FAIL: check_like (MPdetailPage.MPdetailPage)
 ----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "D:\myProgram\pythonProgram\miaopaiTest\MPTestCases\detailPage\MPdetailPage.py", line 80, in check_like
-    self.assertEquals(nickName,self.driver.find_element_by_id('com.yixia.videoeditor:id/nickname').text)
-AssertionError: u'yiixia2384l0r' != u'121\u5c0f\u4f19\u5f88\u6709\u9053f0vz'
-- yiixia2384l0r
-+ 121\u5c0f\u4f19\u5f88\u6709\u9053f0vz
+Ran 1 test in 33.836s
 
-
-----------------------------------------------------------------------
-Ran 1 test in 183.194s
-
-FAILED (failures=1)
+OK

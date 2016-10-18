@@ -4,6 +4,7 @@ Created on 2016年10月12日
 
 @author: wenjing
 '''
+
 import unittest
 from appium import webdriver
 from time import sleep
@@ -25,23 +26,23 @@ class MPHotpageBanner(unittest.TestCase):
         desired_caps['appActivity']='.ui.login.SplashActivity'
         self.driver=webdriver.Remote('http://localhost:4723/wd/hub',desired_caps)
 
-	def init_case(self):
-		#处理开屏广告是否存在的情况
-		try:
-			sleep(1)
-			el = self.driver.find_element_by_id('com.yixia.videoeditor:id/adver_imageview')   #获取开屏广告是否存在
-			self.driver.find_element_by_id('com.yixia.videoeditor:id/textview')    #点击开屏广告上的'点击跳过'按钮
-			sleep(2)
-		except Exception,ex:
-			pass
+    def init_case(self):
+        #处理开屏广告是否存在的情况
+        try:
+            sleep(1)
+            el = self.driver.find_element_by_id('com.yixia.videoeditor:id/adver_imageview')   #获取开屏广告是否存在
+            self.driver.find_element_by_id('com.yixia.videoeditor:id/textview')    #点击开屏广告上的'点击跳过'按钮
+            sleep(2)
+        except Exception,ex:
+            pass
 
     def tearDown(self):
         self.driver.quit();
         print 'end ... '
 
-    def banner_test(self):
-		print 'start banner_test test ...  '
-		self.init_case()
+    def test_banner(self):
+        print 'start test_banner test ...  '
+        self.init_case()
         sleep(7)
         #查找banner翻页元素获取banner总页数
         eles=self.driver.find_elements_by_xpath('//android.widget.LinearLayout[contains(@id,com.yixia.videoeditor:id/banner_dots_layout)]/android.widget.ImageView')
@@ -50,8 +51,15 @@ class MPHotpageBanner(unittest.TestCase):
         #获取banner元素
         banner=self.driver.find_element_by_id('com.yixia.videoeditor:id/banner_img')
         #向左滑动banner总数*2次
+        width=self.driver.get_window_size().get('width')
+        height=self.driver.get_window_size().get('height')
+        #print width
+        #print height
+        x_start=540*width/720
+        x_end=160*width/720
+        y=450*height/1280
         for i in range(0,l):
-            self.driver.swipe(546, 409, 160, 450)
+            self.driver.swipe(x_start, y, x_end, y)
             sleep(2)
         #向左滑动banner总数*2次
         for i in range(0,l):
@@ -65,7 +73,7 @@ class MPHotpageBanner(unittest.TestCase):
 
 def suite(self):
      suite = unittest.TestSuite()  
-     suite.addTest(MPHotpageBanner('banner_test'))
+     suite.addTest(MPHotpageBanner('test_banner'))
      runner = unittest.TextTestRunner()  
      runner.run(suite)       
         

@@ -1,5 +1,6 @@
 #coding:utf-8
 #Edit by liyuanhong 2016/4/12#
+
 import unittest
 from appium import webdriver
 from time import sleep
@@ -50,6 +51,8 @@ class MPsetting(unittest.TestCase):
 		sleep(2)
 		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
 		sleep(1)
+		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+		sleep(1)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
 		sleep(2)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/wifi_setting').click() #打开wifi自动播放
@@ -74,6 +77,8 @@ class MPsetting(unittest.TestCase):
 		sleep(5)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 		sleep(2)
+		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+		sleep(1)
 		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
 		sleep(1)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
@@ -106,6 +111,8 @@ class MPsetting(unittest.TestCase):
 		sleep(2)
 		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
 		sleep(2)
+		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+		sleep(1)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
 		sleep(2)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/rl_language_setting').click()  #点击语言设置
@@ -117,6 +124,8 @@ class MPsetting(unittest.TestCase):
 		sleep(2)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 		sleep(2)
+		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+		sleep(1)
 		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
 		sleep(1)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
@@ -132,6 +141,8 @@ class MPsetting(unittest.TestCase):
 		sleep(2)
 		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
 		sleep(1)
+		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+		sleep(1)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
 		sleep(2)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/rl_language_setting').click()  #点击语言设置
@@ -143,6 +154,8 @@ class MPsetting(unittest.TestCase):
 		sleep(2)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 		sleep(2)
+		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+		sleep(1)
 		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
 		sleep(1)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
@@ -157,6 +170,8 @@ class MPsetting(unittest.TestCase):
 		sleep(5)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 		sleep(2)
+		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+		sleep(1)
 		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
 		sleep(1)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
@@ -175,6 +190,8 @@ class MPsetting(unittest.TestCase):
 		sleep(5)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 		sleep(2)
+		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+		sleep(1)
 		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
 		sleep(1)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
@@ -196,8 +213,12 @@ class MPsetting(unittest.TestCase):
 		sleep(2)
 		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
 		sleep(1)
+		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+		sleep(1)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
 		sleep(2)
+		self.driver.swipe(200,1000,200,100,1000) #设置页面向上滑动
+		sleep(1)
 		self.driver.find_element_by_name('清空缓存').click()  #点击清空缓存
 		sleep(1)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/dialog_left_buton').click()  #点击否取消清空缓存
@@ -232,6 +253,8 @@ class MPsetting(unittest.TestCase):
 		sleep(5)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 		sleep(2)
+		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+		sleep(1)
 		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
 		sleep(1)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置

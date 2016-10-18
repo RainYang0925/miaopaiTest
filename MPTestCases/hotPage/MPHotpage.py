@@ -1,5 +1,6 @@
 #coding:utf-8
 #Edit by liyuanhong 2016/4/12#
+
 import unittest
 from appium import webdriver
 from time import sleep
