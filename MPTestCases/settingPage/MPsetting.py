@@ -1,9 +1,16 @@
 #coding:utf-8
 #Edit by liyuanhong 2016/4/12#
 
+import sys
+curDir = sys.path[0]
+print curDir
+sys.path.append(curDir + '\\MPTestCases\\common')
+
+
 import unittest
 from appium import webdriver
 from time import sleep
+import Initialize
 
 class MPsetting(unittest.TestCase):
 	def __init__(self,methodName):
@@ -45,7 +52,7 @@ class MPsetting(unittest.TestCase):
 		'''按钮的点击测试
 		1、分别对静音、wifi下自动播放、3G较底画质开关、静音进行了打开和关闭的点击测试
 		'''
-		self.init_case()
+		Initialize.init_case(self)
 		sleep(5)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 		sleep(2)
@@ -73,7 +80,7 @@ class MPsetting(unittest.TestCase):
 		'''
 	def test_comment_etc(self):
 		print 'start test_comment_etc test ...  '
-		self.init_case()
+		Initialize.init_case(self)
 		sleep(5)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 		sleep(2)
@@ -105,7 +112,7 @@ class MPsetting(unittest.TestCase):
 		'''
 	def test_change_language(self):
 		print 'start test_change_language test ...  '
-		self.init_case()
+		Initialize.init_case(self)
 		sleep(5)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 		sleep(2)
@@ -166,7 +173,7 @@ class MPsetting(unittest.TestCase):
 		'''
 	def test_bind_mobile(self):
 		print 'start test_bind_mobile test ...  '
-		self.init_case()
+		Initialize.init_case(self)
 		sleep(5)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 		sleep(2)
@@ -186,7 +193,7 @@ class MPsetting(unittest.TestCase):
 		'''
 	def test_version_check(self):
 		print 'start test_version_check test ...  '
-		self.init_case()
+		Initialize.init_case(self)
 		sleep(5)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 		sleep(2)
@@ -207,7 +214,7 @@ class MPsetting(unittest.TestCase):
 		'''
 	def test_clear_cache(self):
 		print 'start test_clear_cache test ...  '
-		self.init_case()
+		Initialize.init_case(self)
 		sleep(5)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 		sleep(2)
@@ -249,7 +256,7 @@ class MPsetting(unittest.TestCase):
 	'''
 	def test_setting_page_all_button_click(self):
 		print 'start test_setting_page_all_button_click test ...  '
-		self.init_case()
+		Initialize.init_case(self)
 		sleep(5)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 		sleep(2)

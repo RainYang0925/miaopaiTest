@@ -5,9 +5,16 @@ Created on 2016年10月12日
 @author: wenjing
 '''
 
+import sys
+curDir = sys.path[0]
+print curDir
+sys.path.append(curDir + '\\MPTestCases\\common')
+
 import unittest
 from appium import webdriver
 from time import sleep
+import Initialize
+
 class MPHotpageBanner(unittest.TestCase):
     def __init__(self,methodName):
         unittest.TestCase.__init__(self, methodName)
@@ -26,23 +33,13 @@ class MPHotpageBanner(unittest.TestCase):
         desired_caps['appActivity']='.ui.login.SplashActivity'
         self.driver=webdriver.Remote('http://localhost:4723/wd/hub',desired_caps)
 
-    def init_case(self):
-        #处理开屏广告是否存在的情况
-        try:
-            sleep(1)
-            el = self.driver.find_element_by_id('com.yixia.videoeditor:id/adver_imageview')   #获取开屏广告是否存在
-            self.driver.find_element_by_id('com.yixia.videoeditor:id/textview')    #点击开屏广告上的'点击跳过'按钮
-            sleep(2)
-        except Exception,ex:
-            pass
-
     def tearDown(self):
         self.driver.quit();
         print 'end ... '
 
     def test_banner(self):
         print 'start test_banner test ...  '
-        self.init_case()
+        Initialize.init_case(self)  #处理开屏广告是否存在
         sleep(7)
         #查找banner翻页元素获取banner总页数
         eles=self.driver.find_elements_by_xpath('//android.widget.LinearLayout[contains(@id,com.yixia.videoeditor:id/banner_dots_layout)]/android.widget.ImageView')

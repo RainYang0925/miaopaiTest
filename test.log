@@ -1,134 +1,27 @@
-....
-----------------------------------------------------------------------
-Ran 4 tests in 0.000s
-
-OK
-...
-----------------------------------------------------------------------
-Ran 3 tests in 0.000s
-
-OK
-.......
-----------------------------------------------------------------------
-Ran 7 tests in 315.781s
-
-OK
-.EE..
-======================================================================
-ERROR: switch_category_at_shouye_by_slide (MPHotpage.MPHotpage)
-切换分类页面
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "D:\myProgram\pythonProgram\miaopaiTest\MPTestCases\hotPage\MPHotpage.py", line 155, in switch_category_at_shouye_by_slide
-    self.driver.swipe(50, 900, 700, 900) #向左滑动
-  File "C:\Python27\lib\site-packages\appium\webdriver\webdriver.py", line 241, in swipe
-    action.perform()
-  File "C:\Python27\lib\site-packages\appium\webdriver\common\touch_action.py", line 94, in perform
-    self._driver.execute(Command.TOUCH_ACTION, params)
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
-    self.error_handler.check_response(response)
-  File "C:\Python27\lib\site-packages\appium\webdriver\errorhandler.py", line 29, in check_response
-    raise wde
-WebDriverException: Message: An unknown server-side error occurred while processing the command.
-
-
-======================================================================
-ERROR: switch_category_at_shouye_by_click (MPHotpage.MPHotpage)
-首页平道分类测试
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "D:\myProgram\pythonProgram\miaopaiTest\MPTestCases\hotPage\MPHotpage.py", line 74, in switch_category_at_shouye_by_click
-    ele1[3].click()
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 72, in click
-    self._execute(Command.CLICK_ELEMENT)
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webelement.py", line 461, in _execute
-    return self._parent.execute(command, params)
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
-    self.error_handler.check_response(response)
-  File "C:\Python27\lib\site-packages\appium\webdriver\errorhandler.py", line 29, in check_response
-    raise wde
-NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
-
-
-----------------------------------------------------------------------
-Ran 5 tests in 370.970s
-
-FAILED (errors=2)
-.
-----------------------------------------------------------------------
-Ran 1 test in 60.485s
-
-OK
-....
-----------------------------------------------------------------------
-Ran 4 tests in 349.830s
-
-OK
-.test_login1
-test_login2
-test_login3
-MPlogin
-test_shoot1
-test_shoot2
-test_shoot3
-************************** MPsetting test **************************
-************************** MPsetting test **************************
-************************** MPsetting test **************************
-************************** MPsetting test **************************
-************************** MPsetting test **************************
-************************** MPsetting test **************************
-************************** MPsetting test **************************
-start test_into_setting_page test ...  
-end ... 
-start test_comment_etc test ...  
-end ... 
-start test_change_language test ...  
-end ... 
-start test_bind_mobile test ...  
-end ... 
-start test_version_check test ...  
-end ... 
-start test_clear_cache test ...  
-end ... 
-start test_setting_page_all_button_click test ...  
-end ... 
-************************** MPHotpage test **************************
-************************** MPHotpage test **************************
-************************** MPHotpage test **************************
-************************** MPHotpage test **************************
-************************** MPHotpage test **************************
-start click_shouye_rebang_faxian_wo test ...  
-end ... 
-start switch_category_at_shouye_by_slide test ...  
-end ... 
-start switch_category_at_shouye_by_click test ...  
-end ... 
-start switch_Opencategory_at_shouye_by_click test ...  
-end ... 
-start drag_to_change_category_order test ...  
-end ... 
-************************** MPBanner_test test **************************
-start test_banner test ...  
-6
-end ... 
-************************** MPmypage test **************************
-************************** MPmypage test **************************
-************************** MPmypage test **************************
-************************** MPmypage test **************************
-start test_feedback test ...  
-end ... 
-start test_mypage_topinfo_click test ...  
-end ... 
-start test_mypage_under_tipinfo_items_click test ...  
-end ... 
-start test_message_items_all_click test ...  
-end ... 
+FD:\myProgram\pythonProgram\miaopaiTest
+D:\myProgram\pythonProgram\miaopaiTest
+D:\myProgram\pythonProgram\miaopaiTest
+D:\myProgram\pythonProgram\miaopaiTest
+D:\myProgram\pythonProgram\miaopaiTest
 ************************** MPdetailPage test **************************
 start test_check_like test ...  
+Initialize
 ...........
+double click
 end ... 
 
+======================================================================
+FAIL: test_check_like (MPdetailPage.MPdetailPage)
 ----------------------------------------------------------------------
-Ran 1 test in 33.836s
+Traceback (most recent call last):
+  File "D:\myProgram\pythonProgram\miaopaiTest\MPTestCases\detailPage\MPdetailPage.py", line 91, in test_check_like
+    self.assertEquals(nickName,self.driver.find_element_by_id('com.yixia.videoeditor:id/nickname').text)
+AssertionError: u'yiixia2384l0r' != u'\u5609\u4f34ronk'
+- yiixia2384l0r
++ \u5609\u4f34ronk
 
-OK
+
+----------------------------------------------------------------------
+Ran 1 test in 143.990s
+
+FAILED (failures=1)

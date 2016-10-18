@@ -4,9 +4,15 @@ Created on 2016年10月12日
 @author: wenjing
 '''
 
+import sys
+curDir = sys.path[0]
+print curDir
+sys.path.append(curDir + '\\MPTestCases\\common')
+
 import unittest
 from appium import webdriver
 from time import sleep
+import Initialize
 class MPdetailPage(unittest.TestCase):
     def __init__(self,methodName):
         unittest.TestCase.__init__(self, methodName)
@@ -26,23 +32,13 @@ class MPdetailPage(unittest.TestCase):
         desired_caps['appActivity']='.ui.login.SplashActivity'
         self.driver=webdriver.Remote('http://localhost:4723/wd/hub',desired_caps)
 
-    def init_case(self):
-        #处理开屏广告是否存在的情况
-        try:
-            sleep(1)
-            el = self.driver.find_element_by_id('com.yixia.videoeditor:id/adver_imageview')   #获取开屏广告是否存在
-            self.driver.find_element_by_id('com.yixia.videoeditor:id/textview')    #点击开屏广告上的'点击跳过'按钮
-            sleep(2)
-        except Exception,ex:
-            pass
-
     def tearDown(self):
         self.driver.quit()
         print 'end ... '
 
     def test_check_like(self):
         print 'start test_check_like test ...  '
-        self.init_case()
+        Initialize.init_case(self)  #处理开屏广告是否存在
         sleep(5)
         #手机号登陆
         self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_record').click()
@@ -61,8 +57,69 @@ class MPdetailPage(unittest.TestCase):
             self.driver.keyevent('4')
             print'...........'
             sleep(10)
+			
+		#我的界面获取用户昵称
+        self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my_lay').click()
+        sleep(5)
+        nickName=self.driver.find_element_by_id('com.yixia.videoeditor:id/nickname').text
+        self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_feed').click()
+        #点击热门第一个视频
+        sleep(5)
+        ele=self.driver.find_elements_by_id('com.yixia.videoeditor:id/cover')
+        ele[0].click()
+        sleep(2)
+        #点击单列第一个视频
+        ele=self.driver.find_elements_by_id('com.yixia.videoeditor:id/content')
+        ele[0].click()
+        sleep(5)
+        #双击点赞
+        l1=self.driver.find_element_by_id('com.yixia.videoeditor:id/video_layout')
+        x=int (l1.location.get('x')+200)
+        y=int (l1.location.get('y')+200)
+        self.driver.tap([(x,y)], 100)
+        self.driver.tap([(x,y)], 100)
+        print 'double click'
+        sleep(5)
+        #点击第一个头像进入对比用户昵称
+        self.driver.find_element_by_id('com.yixia.videoeditor:id/good_fold_parent_layout').click()
+        sleep(5)
+        self.driver.scroll(self.driver.find_element_by_id('com.yixia.videoeditor:id/good_fold_parent_layout'), self.driver.find_element_by_id('com.yixia.videoeditor:id/content'))
+        sleep(5)
+        ele=self.driver.find_elements_by_id('com.yixia.videoeditor:id/icon')
+        ele[1].click()
+        sleep(5)
+        self.assertEquals(nickName,self.driver.find_element_by_id('com.yixia.videoeditor:id/nickname').text)  
+        sleep(5)
+        self.driver.keyevent('4')
+        sleep(5)
+        #取消点赞
+        self.driver.find_element_by_id('com.yixia.videoeditor:id/good_send').click()
+        sleep(5)
+        ele=self.driver.find_elements_by_id('com.yixia.videoeditor:id/icon')
+        ele[0].click()
+        sleep(5)
+        self.assertNotEquals(nickName,self.driver.find_element_by_id('com.yixia.videoeditor:id/nickname').text)  
+        sleep(5)
+        self.driver.keyevent('4')
+        sleep(5)
+        #点赞
+        self.driver.find_element_by_id('com.yixia.videoeditor:id/good_send').click()
+        sleep(5)
+        self.driver.find_element_by_id('com.yixia.videoeditor:id/good_fold_parent_layout').click()
+        sleep(5)
+        #评论部分
+        self.driver.find_element_by_id('com.yixia.videoeditor:id/comment_input').click()
+        sleep(5)
+        self.driver.find_element_by_id('com.yixia.videoeditor:id/send_text').is_enabled();
+        sleep(5)
+        self.driver.find_element_by_id('com.yixia.videoeditor:id/comment_input').send_keys('6666')
+        sleep(5)
+        self.driver.find_element_by_id('com.yixia.videoeditor:id/send_text').is_enabled()
+        self.driver.find_element_by_id('com.yixia.videoeditor:id/send_text').click()
+        sleep(5)
+        self.driver.keyevent('4')
+        self.driver.keyevent('4')
         
-
 
 def suite(self):
     suite = unittest.TestSuite()  

@@ -1,8 +1,15 @@
 #coding:utf-8
 #Edit by liyuanhong 2016/4/12#
+
+import sys
+curDir = sys.path[0]
+print curDir
+sys.path.append(curDir + '\\MPTestCases\\common')
+
 import unittest
 from appium import webdriver
 from time import sleep
+import Initialize
 
 class MPmypage(unittest.TestCase):
 	def __init__(self,methodName):
@@ -50,7 +57,7 @@ class MPmypage(unittest.TestCase):
 		'''
 	def test_feedback(self):
 		print 'start test_feedback test ...  '
-		self.init_case()
+		Initialize.init_case(self)
 		sleep(5)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 		sleep(2)
@@ -178,7 +185,7 @@ class MPmypage(unittest.TestCase):
 	#测试我的页面，顶部信息栏元素的点击
 	def test_mypage_topinfo_click(self):
 		print 'start test_mypage_topinfo_click test ...  '
-		self.init_case()  #处理开屏广告是否存在
+		Initialize.init_case(self)  #处理开屏广告是否存在
 		sleep(5)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click()  #点击底导上的我进入我的页面
 		sleep(2)
@@ -202,7 +209,7 @@ class MPmypage(unittest.TestCase):
 	#点击完我的页面下，用户信息栏下的所有选项
 	def test_mypage_under_tipinfo_items_click(self):
 		print 'start test_mypage_under_tipinfo_items_click test ...  '
-		self.init_case()  #处理开屏广告是否存在
+		Initialize.init_case(self)  #处理开屏广告是否存在
 		sleep(5)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click()  #点击底导上的我进入我的页面
 		sleep(2)
@@ -270,7 +277,7 @@ class MPmypage(unittest.TestCase):
 	#点击完消息页面的所有item项
 	def test_message_items_all_click(self):
 		print 'start test_message_items_all_click test ...  '
-		self.init_case()  #处理开屏广告是否存在
+		Initialize.init_case(self)  #处理开屏广告是否存在
 		sleep(5)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click()  #点击底导上的我进入我的页面
 		sleep(2)

@@ -1,15 +1,22 @@
 #coding:utf-8
 #Edit by liyuanhong 2016/4/12#
 
+import sys
+curDir = sys.path[0]
+print curDir
+sys.path.append(curDir + '\\MPTestCases\\common')
+
+
 import unittest
 from appium import webdriver
 from time import sleep
+import Initialize
 
 class MPHotpage(unittest.TestCase):
 	def __init__(self,methodName):
 		unittest.TestCase.__init__(self, methodName)
 		print "************************** MPHotpage test **************************"
-		
+	'''	
 	def init_case(self):
 		#处理开屏广告是否存在的情况
 		try:
@@ -19,6 +26,8 @@ class MPHotpage(unittest.TestCase):
 			sleep(2)
 		except Exception,ex:
 			pass
+			'''
+		
 			
 	def setUp(self):
 		desired_caps={}
@@ -43,7 +52,7 @@ class MPHotpage(unittest.TestCase):
 		1、分别对底导上的首页、热榜、发现，我进行了点击
 		'''
 		print 'start click_shouye_rebang_faxian_wo test ...  '
-		self.init_case()
+		Initialize.init_case(self)
 		sleep(5)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_feed').click() #点击底导上的首页
 		sleep(2)
@@ -61,7 +70,7 @@ class MPHotpage(unittest.TestCase):
 		1、点击切换完首页所有的分类
 		'''
 		print 'start switch_category_at_shouye_by_click test ...  '
-		self.init_case()
+		Initialize.init_case(self)
 		sleep(5)
 		ele1 = self.driver.find_elements_by_xpath('//android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.HorizontalScrollView/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.RadioButton') #获取首页所有的二级分类
 		ele1[0].click()
@@ -89,7 +98,7 @@ class MPHotpage(unittest.TestCase):
 		1、点击切换完首页展开的频道分类
 		'''
 		print 'start switch_Opencategory_at_shouye_by_click test ...  '
-		self.init_case()
+		Initialize.init_case(self)
 		sleep(5)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/more').click() #点击展开频道更多
 		sleep(1)
@@ -120,7 +129,7 @@ class MPHotpage(unittest.TestCase):
 		1、改变首页分类的顺序
 		'''
 		print 'start drag_to_change_category_order test ...  '
-		self.init_case()
+		Initialize.init_case(self)
 		sleep(5)
 		self.driver.find_element_by_id('com.yixia.videoeditor:id/more').click() #点击展开频道更多
 		sleep(1)
@@ -146,7 +155,7 @@ class MPHotpage(unittest.TestCase):
 		1、滑动切换完首页所有的分类
 		'''
 		print 'start switch_category_at_shouye_by_slide test ...  '
-		self.init_case()
+		Initialize.init_case(self)
 		sleep(5)
 		for i in range(0,20):
 			self.driver.swipe(700, 900, 50, 900) #向右滑动
@@ -165,6 +174,5 @@ def suite(self):
 	suite.addTest(MPHotpage('switch_category_at_shouye_by_click'))
 	suite.addTest(MPHotpage('switch_Opencategory_at_shouye_by_click'))
 	suite.addTest(MPHotpage('drag_to_change_category_order'))
-
 	runner = unittest.TextTestRunner()  
 	runner.run(suite)
