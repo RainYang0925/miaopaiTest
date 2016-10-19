@@ -1,6 +1,7 @@
 @echo off
 
 del test.log
+del /q errorScreenShot\*.*
 
 rem 只输出到命令行
 rem python startTest.py

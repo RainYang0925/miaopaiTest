@@ -1,16 +1,23 @@
 #coding:utf-8
 #Edit by liyuanhong 2016/4/12#
 
+#必须导入的内容
 import sys
 curDir = sys.path[0]
 print curDir
 sys.path.append(curDir + '\\MPTestCases\\common')
+import Initialize
+import CutScreenshot
+import traceback
+
+
+
+
 
 
 import unittest
 from appium import webdriver
 from time import sleep
-import Initialize
 
 class MPsetting(unittest.TestCase):
 	def __init__(self,methodName):
@@ -254,34 +261,44 @@ class MPsetting(unittest.TestCase):
 	'''退出登陆
 	1、点击退出登录
 	'''
-	def test_setting_page_all_button_click(self):
-		print 'start test_setting_page_all_button_click test ...  '
-		Initialize.init_case(self)
-		sleep(5)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
-		sleep(2)
-		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
-		sleep(1)
-		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
-		sleep(1)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
-		sleep(2)
-		self.driver.swipe(200,800,200,200,1000) #设置页面向上滑动
-		sleep(2)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/logout_button').click() #点击退出登录按钮
-		sleep(2)
+	def test_setting_page_logOut(self):
+		try:
+			print 'start test_setting_page_logOut test ...  '
+			Initialize.init_case(self)
+			sleep(5)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
+			sleep(2)
+			self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+			sleep(1)
+			self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
+			sleep(2)
+			self.driver.swipe(200,800,200,200,1000) #设置页面向上滑动
+			sleep(2)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/logout_button').click() #点击退出登录按钮
+			sleep(2)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/dialog_right_buton').click() #点击确定
+			sleep(2)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click() #点击返回到我的页面
+			sleep(2)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_feed').click() #点击回到首页首页
+			sleep(2)
+		except Exception,e:
+			print traceback.format_exc()
+			CutScreenshot.cutScreenShot(self,sys._getframe().f_code.co_name)
 
 def suite(self):
 	suite = unittest.TestSuite()  
+	'''
 	suite.addTest(MPsetting('test_into_setting_page'))
 	suite.addTest(MPsetting('test_comment_etc'))
 	suite.addTest(MPsetting('test_change_language'))
 	suite.addTest(MPsetting('test_bind_mobile'))
 	suite.addTest(MPsetting('test_version_check'))
 	suite.addTest(MPsetting('test_clear_cache'))
-	suite.addTest(MPsetting('test_setting_page_all_button_click'))
+	'''
+	suite.addTest(MPsetting('test_setting_page_logOut'))
 
 	runner = unittest.TextTestRunner()  
 	runner.run(suite)
-
-	
