@@ -55,163 +55,183 @@ class MPsetting(unittest.TestCase):
 
 	#进入设置页面
 	def test_into_setting_page(self):
-		print 'start test_into_setting_page test ...  '
-		'''按钮的点击测试
-		1、分别对静音、wifi下自动播放、3G较底画质开关、静音进行了打开和关闭的点击测试
-		'''
-		Initialize.init_case(self)
-		sleep(5)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
-		sleep(2)
-		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
-		sleep(1)
-		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
-		sleep(1)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
-		sleep(2)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/wifi_setting').click() #打开wifi自动播放
-		sleep(1)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/wifi_setting').click() #关闭wifi自动播放
-		sleep(1)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/upload_3g_setting').click() #打开3G拍摄
-		sleep(1)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/upload_3g_setting').click() #关闭3G拍摄
-		sleep(1)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/mute_setting').click() #打开静音
-		sleep(1)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/mute_setting').click() #关闭静音
-		sleep(1)
+		try:
+			print 'start test_into_setting_page test ...  '
+			'''按钮的点击测试
+			1、分别对静音、wifi下自动播放、3G较底画质开关、静音进行了打开和关闭的点击测试
+			'''
+			Initialize.init_case(self)
+			sleep(5)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
+			sleep(2)
+			self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+			sleep(1)
+			self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
+			sleep(2)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/wifi_setting').click() #打开wifi自动播放
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/wifi_setting').click() #关闭wifi自动播放
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/upload_3g_setting').click() #打开3G拍摄
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/upload_3g_setting').click() #关闭3G拍摄
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/mute_setting').click() #打开静音
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/mute_setting').click() #关闭静音
+			sleep(1)
+		except Exception,e:
+			print traceback.format_exc()
+			CutScreenshot.cutScreenShot(self,sys._getframe().f_code.co_name)
 		
 		'''新消息提醒
 		1、分别对粉丝，评论，赞的push开关进行了打开和关闭
 		'''
 	def test_comment_etc(self):
-		print 'start test_comment_etc test ...  '
-		Initialize.init_case(self)
-		sleep(5)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
-		sleep(2)
-		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
-		sleep(1)
-		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
-		sleep(1)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
-		sleep(2)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/message_tips_text').click()  #点击新消息提醒
-		sleep(1)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/message_fans').click()  #打开新粉丝push
-		sleep(1)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/message_fans').click()  #关闭新粉丝push
-		sleep(1)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/message_comment').click()  #打开评论push
-		sleep(1)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/message_comment').click()  #关闭评论push
-		sleep(1)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/message_good').click()  #打开赞push
-		sleep(1)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/message_good').click()  #关闭赞push
-		sleep(1)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click()  #点击返回按钮退出该页面
-		sleep(1)
+		try:
+			print 'start test_comment_etc test ...  '
+			Initialize.init_case(self)
+			sleep(5)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
+			sleep(2)
+			self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+			sleep(1)
+			self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
+			sleep(2)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/message_tips_text').click()  #点击新消息提醒
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/message_fans').click()  #打开新粉丝push
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/message_fans').click()  #关闭新粉丝push
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/message_comment').click()  #打开评论push
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/message_comment').click()  #关闭评论push
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/message_good').click()  #打开赞push
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/message_good').click()  #关闭赞push
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click()  #点击返回按钮退出该页面
+			sleep(1)
+		except Exception,e:
+			print traceback.format_exc()
+			CutScreenshot.cutScreenShot(self,sys._getframe().f_code.co_name)
 
 		'''语言设置
 		1、主要测试了繁体中文，英文，简体中文之间的切换，以及判断语言是否改变
 		'''
 	def test_change_language(self):
-		print 'start test_change_language test ...  '
-		Initialize.init_case(self)
-		sleep(5)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
-		sleep(2)
-		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
-		sleep(2)
-		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
-		sleep(1)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
-		sleep(2)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/rl_language_setting').click()  #点击语言设置
-		sleep(1)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_selectlanguage_traditional').click()  #点击繁体中文
-		sleep(2)
-		txt = self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').get_attribute("text")
-		self.assertEqual(txt,u'我')
-		sleep(2)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
-		sleep(2)
-		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
-		sleep(1)
-		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
-		sleep(1)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
-		sleep(2)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/rl_language_setting').click()  #点击语言设置
-		sleep(1)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_selectlanguage_english').click()  #点击Englist
-		sleep(2)
-		txt = self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').get_attribute("text")
-		self.assertEqual(txt,'Me')
-		sleep(2)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
-		sleep(2)
-		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
-		sleep(1)
-		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
-		sleep(1)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
-		sleep(2)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/rl_language_setting').click()  #点击语言设置
-		sleep(1)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_selectlanguage_simplified').click()  #点击简体中文
-		sleep(2)
-		txt = self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').get_attribute("text")
-		self.assertEqual(txt,u'我')
-		sleep(2)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
-		sleep(2)
-		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
-		sleep(1)
-		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
-		sleep(1)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
-		sleep(2)
+		try:
+			print 'start test_change_language test ...  '
+			Initialize.init_case(self)
+			sleep(5)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
+			sleep(2)
+			self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+			sleep(2)
+			self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
+			sleep(2)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/rl_language_setting').click()  #点击语言设置
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_selectlanguage_traditional').click()  #点击繁体中文
+			sleep(2)
+			txt = self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').get_attribute("text")
+			self.assertEqual(txt,u'我')
+			sleep(2)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
+			sleep(2)
+			self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+			sleep(1)
+			self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
+			sleep(2)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/rl_language_setting').click()  #点击语言设置
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_selectlanguage_english').click()  #点击Englist
+			sleep(2)
+			txt = self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').get_attribute("text")
+			self.assertEqual(txt,'Me')
+			sleep(2)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
+			sleep(2)
+			self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+			sleep(1)
+			self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
+			sleep(2)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/rl_language_setting').click()  #点击语言设置
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_selectlanguage_simplified').click()  #点击简体中文
+			sleep(2)
+			txt = self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').get_attribute("text")
+			self.assertEqual(txt,u'我')
+			sleep(2)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
+			sleep(2)
+			self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+			sleep(1)
+			self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
+			sleep(2)
+		except Exception,e:
+			print traceback.format_exc()
+			CutScreenshot.cutScreenShot(self,sys._getframe().f_code.co_name)
 
 		'''手机绑定
 		1、主要测试了进入手机号绑定和退出手机号绑定页面
 		'''
 	def test_bind_mobile(self):
-		print 'start test_bind_mobile test ...  '
-		Initialize.init_case(self)
-		sleep(5)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
-		sleep(2)
-		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
-		sleep(1)
-		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
-		sleep(1)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
-		sleep(2)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/phone_bind').click()  #点击手机绑定
-		sleep(1)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click()  #退出手机号绑定
-		sleep(1)
+		try:
+			print 'start test_bind_mobile test ...  '
+			Initialize.init_case(self)
+			sleep(5)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
+			sleep(2)
+			self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+			sleep(1)
+			self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
+			sleep(2)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/phone_bind').click()  #点击手机绑定
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click()  #退出手机号绑定
+			sleep(1)
+		except Exception,e:
+			print traceback.format_exc()
+			CutScreenshot.cutScreenShot(self,sys._getframe().f_code.co_name)
 
 		'''版本检测
 		1、主要测试了版检测功能正常
 		'''
 	def test_version_check(self):
-		print 'start test_version_check test ...  '
-		Initialize.init_case(self)
-		sleep(5)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
-		sleep(2)
-		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
-		sleep(1)
-		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
-		sleep(1)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
-		sleep(2)
-		self.driver.find_element_by_name('版本检测').click()  #点击版本检测选项
-		sleep(3)
+		try:
+			print 'start test_version_check test ...  '
+			Initialize.init_case(self)
+			sleep(5)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
+			sleep(2)
+			self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+			sleep(1)
+			self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
+			sleep(2)
+			self.driver.find_element_by_name('版本检测').click()  #点击版本检测选项
+			sleep(3)
+		except Exception,e:
+			print traceback.format_exc()
+			CutScreenshot.cutScreenShot(self,sys._getframe().f_code.co_name)
 
 
 
@@ -220,42 +240,46 @@ class MPsetting(unittest.TestCase):
 		2、点击清空缓存清空
 		'''
 	def test_clear_cache(self):
-		print 'start test_clear_cache test ...  '
-		Initialize.init_case(self)
-		sleep(5)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
-		sleep(2)
-		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
-		sleep(1)
-		self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
-		sleep(1)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
-		sleep(2)
-		self.driver.swipe(200,1000,200,100,1000) #设置页面向上滑动
-		sleep(1)
-		self.driver.find_element_by_name('清空缓存').click()  #点击清空缓存
-		sleep(1)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/dialog_left_buton').click()  #点击否取消清空缓存
-		self.el = None
 		try:
-			self.el = self.driver.find_element_by_name('0')
-		except Exception,ex:
-			#print Exception,':',ex
-			pass
-		self.assertIsNone(self.el)  #通过缓存不为0来判断缓存没有清空
-		sleep(2)
-		self.driver.find_element_by_name('清空缓存').click()  #点击清空缓存
-		sleep(5)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/dialog_right_buton').click()  #点击是清空缓存
-		sleep(1)
-		self.el = None
-		try:
-			self.el = self.driver.find_element_by_name('0')
-		except Exception,ex:
-			#print Exception,':',ex
-			pass
-		self.assertIsNotNone(self.el)  #通过缓存为0来判断缓存已经被清空
-		sleep(2)
+			print 'start test_clear_cache test ...  '
+			Initialize.init_case(self)
+			sleep(5)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
+			sleep(2)
+			self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+			sleep(1)
+			self.driver.swipe(200,1000,200,100,1000) #我的页面向上滑动
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
+			sleep(2)
+			self.driver.swipe(200,1000,200,100,1000) #设置页面向上滑动
+			sleep(1)
+			self.driver.find_element_by_name('清空缓存').click()  #点击清空缓存
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/dialog_left_buton').click()  #点击否取消清空缓存
+			self.el = None
+			try:
+				self.el = self.driver.find_element_by_name('0')
+			except Exception,ex:
+				#print Exception,':',ex
+				pass
+			self.assertIsNone(self.el)  #通过缓存不为0来判断缓存没有清空
+			sleep(2)
+			self.driver.find_element_by_name('清空缓存').click()  #点击清空缓存
+			sleep(5)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/dialog_right_buton').click()  #点击是清空缓存
+			sleep(1)
+			self.el = None
+			try:
+				self.el = self.driver.find_element_by_name('0')
+			except Exception,ex:
+				#print Exception,':',ex
+				pass
+			self.assertIsNotNone(self.el)  #通过缓存为0来判断缓存已经被清空
+			sleep(2)
+		except Exception,e:
+			print traceback.format_exc()
+			CutScreenshot.cutScreenShot(self,sys._getframe().f_code.co_name)
 		
 
 	'''退出登陆
@@ -290,14 +314,12 @@ class MPsetting(unittest.TestCase):
 
 def suite(self):
 	suite = unittest.TestSuite()  
-	'''
 	suite.addTest(MPsetting('test_into_setting_page'))
 	suite.addTest(MPsetting('test_comment_etc'))
 	suite.addTest(MPsetting('test_change_language'))
 	suite.addTest(MPsetting('test_bind_mobile'))
 	suite.addTest(MPsetting('test_version_check'))
 	suite.addTest(MPsetting('test_clear_cache'))
-	'''
 	suite.addTest(MPsetting('test_setting_page_logOut'))
 
 	runner = unittest.TextTestRunner()  

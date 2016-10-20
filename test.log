@@ -1,0 +1,113 @@
+.E.E..D:\myProgram\pythonProgram\miaopaiTest
+D:\myProgram\pythonProgram\miaopaiTest
+D:\myProgram\pythonProgram\miaopaiTest
+D:\myProgram\pythonProgram\miaopaiTest
+D:\myProgram\pythonProgram\miaopaiTest
+************************** MPsetting test **************************
+************************** MPsetting test **************************
+************************** MPsetting test **************************
+************************** MPsetting test **************************
+************************** MPsetting test **************************
+************************** MPsetting test **************************
+************************** MPsetting test **************************
+start test_into_setting_page test ...  
+Initialize
+end ... 
+start test_comment_etc test ...  
+Initialize
+Traceback (most recent call last):
+  File "D:\myProgram\pythonProgram\miaopaiTest\MPTestCases\settingPage\MPsetting.py", line 105, in test_comment_etc
+    self.driver.find_element_by_id('com.yixia.videoeditor:id/message_tips_text').click()  #点击新消息提醒
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 269, in find_element_by_id
+    return self.find_element(by=By.ID, value=id_)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 752, in find_element
+    'value': value})['value']
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python27\lib\site-packages\appium\webdriver\errorhandler.py", line 29, in check_response
+    raise wde
+NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
+
+
+D:\myProgram\pythonProgram\miaopaiTest\errorScreenShot\test_comment_etc.png
+end ... 
+start test_change_language test ...  
+Initialize
+end ... 
+start test_bind_mobile test ...  
+Initialize
+Traceback (most recent call last):
+  File "D:\myProgram\pythonProgram\miaopaiTest\MPTestCases\settingPage\MPsetting.py", line 208, in test_bind_mobile
+    self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click()  #退出手机号绑定
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 269, in find_element_by_id
+    return self.find_element(by=By.ID, value=id_)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 752, in find_element
+    'value': value})['value']
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python27\lib\site-packages\appium\webdriver\errorhandler.py", line 29, in check_response
+    raise wde
+NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
+
+
+D:\myProgram\pythonProgram\miaopaiTest\errorScreenShot\test_bind_mobile.png
+end ... 
+start test_version_check test ...  
+Initialize
+end ... 
+start test_clear_cache test ...  
+Initialize
+end ... 
+start test_setting_page_logOut test ...  
+Initialize
+Traceback (most recent call last):
+  File "D:\myProgram\pythonProgram\miaopaiTest\MPTestCases\settingPage\MPsetting.py", line 305, in test_setting_page_logOut
+    self.driver.find_element_by_id('com.yixia.videoeditor:id/dialog_right_buton').click() #点击确定
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 269, in find_element_by_id
+    return self.find_element(by=By.ID, value=id_)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 752, in find_element
+    'value': value})['value']
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "C:\Python27\lib\site-packages\appium\webdriver\errorhandler.py", line 29, in check_response
+    raise wde
+NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
+
+
+D:\myProgram\pythonProgram\miaopaiTest\errorScreenShot\test_setting_page_logOuEt.png
+end ... 
+
+======================================================================
+ERROR: test_comment_etc (MPsetting.MPsetting)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\myProgram\pythonProgram\miaopaiTest\MPTestCases\settingPage\MPsetting.py", line 123, in test_comment_etc
+    CutScreenshot.cutScreenShot(self,sys._getframe().f_code.co_name)
+  File "D:\myProgram\pythonProgram\miaopaiTest\MPTestCases\common\CutScreenshot.py", line 11, in cutScreenShot
+    print x #让该条用例执行失败
+NameError: global name 'x' is not defined
+
+======================================================================
+ERROR: test_bind_mobile (MPsetting.MPsetting)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\myProgram\pythonProgram\miaopaiTest\MPTestCases\settingPage\MPsetting.py", line 212, in test_bind_mobile
+    CutScreenshot.cutScreenShot(self,sys._getframe().f_code.co_name)
+  File "D:\myProgram\pythonProgram\miaopaiTest\MPTestCases\common\CutScreenshot.py", line 11, in cutScreenShot
+    print x #让该条用例执行失败
+NameError: global name 'x' is not defined
+
+======================================================================
+ERROR: test_setting_page_logOut (MPsetting.MPsetting)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\myProgram\pythonProgram\miaopaiTest\MPTestCases\settingPage\MPsetting.py", line 313, in test_setting_page_logOut
+    CutScreenshot.cutScreenShot(self,sys._getframe().f_code.co_name)
+  File "D:\myProgram\pythonProgram\miaopaiTest\MPTestCases\common\CutScreenshot.py", line 11, in cutScreenShot
+    print x #让该条用例执行失败
+NameError: global name 'x' is not defined
+
+----------------------------------------------------------------------
+Ran 7 tests in 226.152s
+
+FAILED (errors=3)
