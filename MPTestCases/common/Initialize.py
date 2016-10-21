@@ -1,6 +1,7 @@
 #coding:utf-8
 #Edit by liyuanhong 2016/10/18#
 
+
 #测试用例的初始化操作
 def init_case(opt):
 	#处理开屏广告是否存在的情况

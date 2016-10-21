@@ -5,10 +5,15 @@ Created on 2016年10月12日
 @author: wenjing
 '''
 
+#必须导入的内容
 import sys
 curDir = sys.path[0]
 print curDir
 sys.path.append(curDir + '\\MPTestCases\\common')
+import Initialize
+import CutScreenshot
+import InitLogin
+import traceback
 
 import unittest
 from appium import webdriver
@@ -40,7 +45,8 @@ class MPHotpageBanner(unittest.TestCase):
     def test_banner(self):
 		try:
 			print 'start test_banner test ...  '
-			Initialize.init_case(self)  #处理开屏广告是否存在
+			Initialize.init_case(self)  #处理开屏广告是否存在的情况
+			InitLogin.init_login(self)  #如果没有登陆则登陆秒拍
 			sleep(7)
 			#查找banner翻页元素获取banner总页数
 			eles=self.driver.find_elements_by_xpath('//android.widget.LinearLayout[contains(@id,com.yixia.videoeditor:id/banner_dots_layout)]/android.widget.ImageView')

@@ -16,6 +16,6 @@ rem  -v -v -v最详细的日志，包括了测试中选中/未选中的Activity信息
 
 rem ----------------执行monkey测试-------------------
 
-powershell "adb shell monkey -p com.yixia.videoeditor --throttle 500 -s 8  -v -v 5000 | tee monkeyTest.log"
+powershell "adb shell monkey -p com.yixia.videoeditor --throttle 500 -s 68  -v -v 5000 | tee monkeyTest.log"
 
 pause

@@ -1,10 +1,14 @@
 #coding:utf-8
 #Edit by liyuanhong 2016/4/12#
 
+#必须导入的内容
 import sys
 curDir = sys.path[0]
 print curDir
 sys.path.append(curDir + '\\MPTestCases\\common')
+import Initialize
+import CutScreenshot
+import traceback
 
 
 import unittest

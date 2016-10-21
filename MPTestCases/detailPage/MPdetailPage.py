@@ -4,10 +4,15 @@ Created on 2016年10月12日
 @author: wenjing
 '''
 
+#必须导入的内容
 import sys
 curDir = sys.path[0]
 print curDir
 sys.path.append(curDir + '\\MPTestCases\\common')
+import Initialize
+import CutScreenshot
+import InitLogin
+import traceback
 
 import unittest
 from appium import webdriver
@@ -38,27 +43,28 @@ class MPdetailPage(unittest.TestCase):
 
     def test_check_like(self):
 		try:
-				print 'start test_check_like test ...  '
-				Initialize.init_case(self)  #处理开屏广告是否存在
+			print 'start test_check_like test ...  '
+			Initialize.init_case(self)  #处理开屏广告是否存在的情况
+			InitLogin.init_login(self)  #如果没有登陆则登陆秒拍
+			sleep(5)
+			#手机号登陆
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_record').click()
+			sleep(5)
+			try:
+				self.driver.find_element_by_id('com.yixia.videoeditor:id/login_phone_button').click()
 				sleep(5)
-				#手机号登陆
-				self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_record').click()
+				self.driver.find_element_by_id('com.yixia.videoeditor:id/phone_textview').send_keys('13699193860')
 				sleep(5)
-				try:
-					self.driver.find_element_by_id('com.yixia.videoeditor:id/login_phone_button').click()
-					sleep(5)
-					self.driver.find_element_by_id('com.yixia.videoeditor:id/phone_textview').send_keys('13699193860')
-					sleep(5)
-					self.driver.find_element_by_id('com.yixia.videoeditor:id/password_textview').send_keys('123456')
-					sleep(5)
-					self.driver.find_element_by_id('com.yixia.videoeditor:id/login_button').is_enabled()
-					self.driver.find_element_by_id('com.yixia.videoeditor:id/login_button').click()
-					sleep(10)
-				except:
-					self.driver.keyevent('4')
-					print'...........'
-					sleep(10)
-					
+				self.driver.find_element_by_id('com.yixia.videoeditor:id/password_textview').send_keys('123456')
+				sleep(5)
+				self.driver.find_element_by_id('com.yixia.videoeditor:id/login_button').is_enabled()
+				self.driver.find_element_by_id('com.yixia.videoeditor:id/login_button').click()
+				sleep(10)
+			except:
+				self.driver.keyevent('4')
+				print'...........'
+				sleep(10)
+				
 			#我的界面获取用户昵称
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my_lay').click()
 			sleep(5)

@@ -8,6 +8,7 @@ print curDir
 sys.path.append(curDir + '\\MPTestCases\\common')
 import Initialize
 import CutScreenshot
+import InitLogin
 import traceback
 
 
@@ -60,7 +61,9 @@ class MPsetting(unittest.TestCase):
 			'''按钮的点击测试
 			1、分别对静音、wifi下自动播放、3G较底画质开关、静音进行了打开和关闭的点击测试
 			'''
-			Initialize.init_case(self)
+			Initialize.init_case(self)  #处理开屏广告是否存在的情况
+			InitLogin.init_login(self)  #如果没有登陆则登陆秒拍
+			
 			sleep(5)
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 			sleep(2)
@@ -92,7 +95,8 @@ class MPsetting(unittest.TestCase):
 	def test_comment_etc(self):
 		try:
 			print 'start test_comment_etc test ...  '
-			Initialize.init_case(self)
+			Initialize.init_case(self)  #处理开屏广告是否存在的情况
+			InitLogin.init_login(self)  #如果没有登陆则登陆秒拍
 			sleep(5)
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 			sleep(2)
@@ -128,7 +132,8 @@ class MPsetting(unittest.TestCase):
 	def test_change_language(self):
 		try:
 			print 'start test_change_language test ...  '
-			Initialize.init_case(self)
+			Initialize.init_case(self)  #处理开屏广告是否存在的情况
+			InitLogin.init_login(self)  #如果没有登陆则登陆秒拍
 			sleep(5)
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 			sleep(2)
@@ -141,7 +146,7 @@ class MPsetting(unittest.TestCase):
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/rl_language_setting').click()  #点击语言设置
 			sleep(1)
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_selectlanguage_traditional').click()  #点击繁体中文
-			sleep(2)
+			sleep(4)
 			txt = self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').get_attribute("text")
 			self.assertEqual(txt,u'我')
 			sleep(2)
@@ -155,8 +160,8 @@ class MPsetting(unittest.TestCase):
 			sleep(2)
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/rl_language_setting').click()  #点击语言设置
 			sleep(1)
-			self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_selectlanguage_english').click()  #点击Englist
-			sleep(2)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_selectlanguage_english').click()  #点击English
+			sleep(4)
 			txt = self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').get_attribute("text")
 			self.assertEqual(txt,'Me')
 			sleep(2)
@@ -171,7 +176,7 @@ class MPsetting(unittest.TestCase):
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/rl_language_setting').click()  #点击语言设置
 			sleep(1)
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_selectlanguage_simplified').click()  #点击简体中文
-			sleep(2)
+			sleep(4)
 			txt = self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').get_attribute("text")
 			self.assertEqual(txt,u'我')
 			sleep(2)
@@ -193,7 +198,8 @@ class MPsetting(unittest.TestCase):
 	def test_bind_mobile(self):
 		try:
 			print 'start test_bind_mobile test ...  '
-			Initialize.init_case(self)
+			Initialize.init_case(self)  #处理开屏广告是否存在的情况
+			InitLogin.init_login(self)  #如果没有登陆则登陆秒拍
 			sleep(5)
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 			sleep(2)
@@ -203,8 +209,12 @@ class MPsetting(unittest.TestCase):
 			sleep(1)
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
 			sleep(2)
-			self.driver.find_element_by_id('com.yixia.videoeditor:id/phone_bind').click()  #点击手机绑定
-			sleep(1)
+			try:
+				self.driver.find_element_by_id('com.yixia.videoeditor:id/phone_bind').click()  #点击手机绑定
+				sleep(1)
+			except:
+				self.driver.find_element_by_id('com.yixia.videoeditor:id/phone_unbind').click()  #点击手机绑定
+				sleep(1)
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click()  #退出手机号绑定
 			sleep(1)
 		except Exception,e:
@@ -217,7 +227,8 @@ class MPsetting(unittest.TestCase):
 	def test_version_check(self):
 		try:
 			print 'start test_version_check test ...  '
-			Initialize.init_case(self)
+			Initialize.init_case(self)  #处理开屏广告是否存在的情况
+			InitLogin.init_login(self)  #如果没有登陆则登陆秒拍
 			sleep(5)
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 			sleep(2)
@@ -242,7 +253,8 @@ class MPsetting(unittest.TestCase):
 	def test_clear_cache(self):
 		try:
 			print 'start test_clear_cache test ...  '
-			Initialize.init_case(self)
+			Initialize.init_case(self)  #处理开屏广告是否存在的情况
+			InitLogin.init_login(self)  #如果没有登陆则登陆秒拍
 			sleep(5)
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 			sleep(2)
@@ -288,7 +300,8 @@ class MPsetting(unittest.TestCase):
 	def test_setting_page_logOut(self):
 		try:
 			print 'start test_setting_page_logOut test ...  '
-			Initialize.init_case(self)
+			Initialize.init_case(self)  #处理开屏广告是否存在的情况
+			InitLogin.init_login(self)  #如果没有登陆则登陆秒拍
 			sleep(5)
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click() #点击底导的我
 			sleep(2)

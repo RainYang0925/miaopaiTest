@@ -8,6 +8,7 @@ print curDir
 sys.path.append(curDir + '\\MPTestCases\\common')
 import Initialize
 import CutScreenshot
+import InitLogin
 import traceback
 
 
@@ -195,7 +196,8 @@ class MPmypage(unittest.TestCase):
 	def test_mypage_topinfo_click(self):
 		try:
 			print 'start test_mypage_topinfo_click test ...  '
-			Initialize.init_case(self)  #处理开屏广告是否存在
+			Initialize.init_case(self)  #处理开屏广告是否存在的情况
+			InitLogin.init_login(self)  #如果没有登陆则登陆秒拍
 			sleep(5)
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click()  #点击底导上的我进入我的页面
 			sleep(2)
@@ -223,7 +225,8 @@ class MPmypage(unittest.TestCase):
 	def test_mypage_under_tipinfo_items_click(self):
 		try:
 			print 'start test_mypage_under_tipinfo_items_click test ...  '
-			Initialize.init_case(self)  #处理开屏广告是否存在
+			Initialize.init_case(self)  #处理开屏广告是否存在的情况
+			InitLogin.init_login(self)  #如果没有登陆则登陆秒拍
 			sleep(5)
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click()  #点击底导上的我进入我的页面
 			sleep(2)
@@ -295,7 +298,8 @@ class MPmypage(unittest.TestCase):
 	def test_message_items_all_click(self):
 		try:
 			print 'start test_message_items_all_click test ...  '
-			Initialize.init_case(self)  #处理开屏广告是否存在
+			Initialize.init_case(self)  #处理开屏广告是否存在的情况
+			InitLogin.init_login(self)  #如果没有登陆则登陆秒拍
 			sleep(5)
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').click()  #点击底导上的我进入我的页面
 			sleep(2)

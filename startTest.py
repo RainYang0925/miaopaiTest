@@ -23,6 +23,7 @@ import MPHotpageBanner
 import MPmypage
 import MPdetailPage
 
+
 MPlogin.suite("0")
 MPshoot.suite("0")
 MPsetting.suite("0")
