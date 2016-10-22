@@ -7,12 +7,21 @@ import os
 
 curDir = sys.path[0]
 
+'''
 sys.path.append(curDir + '\\MPTestCases\\login')
 sys.path.append(curDir + '\\MPTestCases\\shoot')
 sys.path.append(curDir + '\\MPTestCases\\settingPage')
 sys.path.append(curDir + '\\MPTestCases\\hotPage')
 sys.path.append(curDir + '\\MPTestCases\\myPage')
 sys.path.append(curDir + '\\MPTestCases\\detailPage')
+'''
+
+sys.path.append(curDir + '/MPTestCases/login')
+sys.path.append(curDir + '/MPTestCases/shoot')
+sys.path.append(curDir + '/MPTestCases/settingPage')
+sys.path.append(curDir + '/MPTestCases/hotPage')
+sys.path.append(curDir + '/MPTestCases/myPage')
+sys.path.append(curDir + '/MPTestCases/detailPage')
 
 
 import MPlogin

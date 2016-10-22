@@ -6,6 +6,7 @@ import sys
 curDir = sys.path[0]
 print curDir
 sys.path.append(curDir + '\\MPTestCases\\common')
+sys.path.append(curDir + '/MPTestCases/common')
 import Initialize
 import CutScreenshot
 import InitLogin
