@@ -21,7 +21,7 @@ def setUp(self):
 	desired_caps['device']='android'
 	desired_caps['platformName']='Android'
 	desired_caps['browserName']=''
-	desired_caps['version']='4.4.2'
+	desired_caps['version']='6.0.1'
 	desired_caps['deviceName']='HUAWEI H60-L01'
 
 	#desired_caps['app'] = PATH('D:\\AndroidAutomation\\AndroidAutoTest\\app\\zhongchou.apk')
