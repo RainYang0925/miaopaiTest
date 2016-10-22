@@ -26,22 +26,13 @@ class MPHotpageBanner(unittest.TestCase):
         unittest.TestCase.__init__(self, methodName)
         print "************************** MPBanner_test test **************************"
 
-    def setUp(self):
-        desired_caps={}
-        desired_caps['device']='android'
-        desired_caps['platformName']='Android'
-        desired_caps['browserName']=''
-        desired_caps['version']='4.4.2'
-        desired_caps['deviceName']='69T7N15B26001273'
-        #desired_caps['app'] = PATH('D:\\AndroidAutomation\\AndroidAutoTest\\app\\zhongchou.apk')
-        #被测试的App在电脑上的位置
-        desired_caps['appPackage']='com.yixia.videoeditor'
-        desired_caps['appActivity']='.ui.login.SplashActivity'
-        self.driver=webdriver.Remote('http://localhost:4723/wd/hub',desired_caps)
+    #初始化操作
+	def setUp(self):
+		Initialize.setUp(self)
 
-    def tearDown(self):
-        self.driver.quit();
-        print 'end ... '
+	#测试用例执行完成后的操作
+	def tearDown(self):
+		Initialize.tearDown(self)
 
     def test_banner(self):
 		try:

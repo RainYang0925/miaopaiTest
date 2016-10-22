@@ -23,34 +23,15 @@ class MPmypage(unittest.TestCase):
 		unittest.TestCase.__init__(self, methodName)
 		print "************************** MPmypage test **************************"
 
-	def init_case(self):
-		#处理开屏广告是否存在的情况
-		try:
-			sleep(1)
-			el = self.driver.find_element_by_id('com.yixia.videoeditor:id/adver_imageview')   #获取开屏广告是否存在
-			self.driver.find_element_by_id('com.yixia.videoeditor:id/textview')    #点击开屏广告上的'点击跳过'按钮
-			sleep(2)
-		except Exception,ex:
-			pass
 		
 	
+	#初始化操作
 	def setUp(self):
-		desired_caps={}
-		desired_caps['device']='android'
-		desired_caps['platformName']='Android'
-		desired_caps['browserName']=''
-		desired_caps['version']='4.4.2'
-		desired_caps['deviceName']='HUAWEI H60-L01'
+		Initialize.setUp(self)
 
-		#desired_caps['app'] = PATH('D:\\AndroidAutomation\\AndroidAutoTest\\app\\zhongchou.apk')
-		#被测试的App在电脑上的位置
-		desired_caps['appPackage']='com.yixia.videoeditor'
-		desired_caps['appActivity']='.ui.login.SplashActivity'
-		self.driver=webdriver.Remote('http://localhost:4723/wd/hub',desired_caps)
-
+	#测试用例执行完成后的操作
 	def tearDown(self):
-		self.driver.quit();
-		print 'end ... '
+		Initialize.tearDown(self)
 		
 		
 		'''意见反馈

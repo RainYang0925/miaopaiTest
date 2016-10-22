@@ -21,7 +21,7 @@ class MPHotpage(unittest.TestCase):
 	def __init__(self,methodName):
 		unittest.TestCase.__init__(self, methodName)
 		print "************************** MPHotpage test **************************"
-	'''	
+	'''
 	def init_case(self):
 		#处理开屏广告是否存在的情况
 		try:
@@ -34,24 +34,15 @@ class MPHotpage(unittest.TestCase):
 			'''
 		
 			
+	#初始化操作
 	def setUp(self):
-		desired_caps={}
-		desired_caps['device']='android'
-		desired_caps['platformName']='Android'
-		desired_caps['browserName']=''
-		desired_caps['version']='4.4.2'
-		desired_caps['deviceName']='69T7N15B26001273'
+		Initialize.setUp(self)
 
-		#desired_caps['app'] = PATH('D:\\AndroidAutomation\\AndroidAutoTest\\app\\zhongchou.apk')
-		#被测试的App在电脑上的位置
-		desired_caps['appPackage']='com.yixia.videoeditor'
-		desired_caps['appActivity']='.ui.login.SplashActivity'
-		self.driver=webdriver.Remote('http://localhost:4723/wd/hub',desired_caps)
-
+	#测试用例执行完成后的操作
 	def tearDown(self):
-		self.driver.quit();
-		print 'end ... '
-	
+		Initialize.tearDown(self)
+		
+		
 	def click_shouye_rebang_faxian_wo(self):
 		try:
 			'''按钮的点击测试

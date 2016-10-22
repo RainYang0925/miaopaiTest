@@ -1,6 +1,8 @@
 #coding:utf-8
 #Edit by liyuanhong 2016/10/18#
 
+from appium import webdriver
+
 
 #测试用例的初始化操作
 def init_case(opt):
@@ -13,3 +15,21 @@ def init_case(opt):
 		sleep(2)
 	except Exception,ex:
 		pass
+		
+def setUp(self):
+	desired_caps={}
+	desired_caps['device']='android'
+	desired_caps['platformName']='Android'
+	desired_caps['browserName']=''
+	desired_caps['version']='4.4.2'
+	desired_caps['deviceName']='HUAWEI H60-L01'
+
+	#desired_caps['app'] = PATH('D:\\AndroidAutomation\\AndroidAutoTest\\app\\zhongchou.apk')
+	#被测试的App在电脑上的位置
+	desired_caps['appPackage']='com.yixia.videoeditor'
+	desired_caps['appActivity']='.ui.login.SplashActivity'
+	self.driver=webdriver.Remote('http://localhost:4723/wd/hub',desired_caps)
+	
+def tearDown(self):
+	self.driver.quit()
+	print 'end ... '

@@ -20,29 +20,19 @@ from appium import webdriver
 from time import sleep
 import Initialize
 class MPdetailPage(unittest.TestCase):
-    def __init__(self,methodName):
-        unittest.TestCase.__init__(self, methodName)
-        print '************************** MPdetailPage test **************************'
+	def __init__(self,methodName):
+		unittest.TestCase.__init__(self, methodName)
+		print '************************** MPdetailPage test **************************'
 
-    def setUp(self):
-        desired_caps={}
-        desired_caps['device']='android'
-        desired_caps['platformName']='Android'
-        desired_caps['browserName']=''
-        desired_caps['version']='4.4.2'
-        desired_caps['deviceName']='69T7N15B26001273'
+	#初始化操作
+	def setUp(self):
+		Initialize.setUp(self)
 
-        #desired_caps['app'] = PATH('D:\\AndroidAutomation\\AndroidAutoTest\\app\\zhongchou.apk')
-        #被测试的App在电脑上的位置
-        desired_caps['appPackage']='com.yixia.videoeditor'
-        desired_caps['appActivity']='.ui.login.SplashActivity'
-        self.driver=webdriver.Remote('http://localhost:4723/wd/hub',desired_caps)
+	#测试用例执行完成后的操作
+	def tearDown(self):
+		Initialize.tearDown(self)
 
-    def tearDown(self):
-        self.driver.quit()
-        print 'end ... '
-
-    def test_check_like(self):
+	def test_check_like(self):
 		try:
 			print 'start test_check_like test ...  '
 			Initialize.init_case(self)  #处理开屏广告是否存在的情况
@@ -130,10 +120,10 @@ class MPdetailPage(unittest.TestCase):
 		except Exception,e:
 			print traceback.format_exc()
 			CutScreenshot.cutScreenShot(self,sys._getframe().f_code.co_name)
-        
+		
 
 def suite(self):
-    suite = unittest.TestSuite()  
-    suite.addTest(MPdetailPage('test_check_like'))
-    runner = unittest.TextTestRunner()  
-    runner.run(suite)
+	suite = unittest.TestSuite()  
+	suite.addTest(MPdetailPage('test_check_like'))
+	runner = unittest.TextTestRunner()  
+	runner.run(suite)
