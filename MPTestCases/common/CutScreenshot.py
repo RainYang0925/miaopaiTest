@@ -11,7 +11,8 @@ def cutScreenShot(self,picName):
 		filePath = os.path.split(os.path.realpath(sys.argv[0]))[0]  #获取当前脚本路径
 	else:
 		filePath = os.path.split(os.path.realpath(sys.argv[0]))[0]  #获取当前脚本路径
-	print filePath
+
+		
 	if(platform.system() == "Darwin"):
 		fileName = filePath + "/errorScreenShot/" + picName + ".png"  #将用例方法名作为图片名
 	elif(platform.system() == "Windows"):
