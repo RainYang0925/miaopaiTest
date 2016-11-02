@@ -320,14 +320,12 @@ class MPsetting(unittest.TestCase):
 
 def suite(self):
 	suite = unittest.TestSuite()  
-	'''
 	suite.addTest(MPsetting('test_into_setting_page'))
 	suite.addTest(MPsetting('test_comment_etc'))
 	suite.addTest(MPsetting('test_change_language'))
 	suite.addTest(MPsetting('test_bind_mobile'))
 	suite.addTest(MPsetting('test_version_check'))
 	suite.addTest(MPsetting('test_clear_cache'))
-	'''
 	suite.addTest(MPsetting('test_setting_page_logOut'))
 
 	runner = unittest.TextTestRunner()  
