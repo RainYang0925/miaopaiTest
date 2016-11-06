@@ -139,7 +139,7 @@ class MPsetting(unittest.TestCase):
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/rl_language_setting').click()  #点击语言设置
 			sleep(1)
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_selectlanguage_traditional').click()  #点击繁体中文
-			sleep(4)
+			sleep(6)
 			txt = self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').get_attribute("text")
 			self.assertEqual(txt,u'我')
 			sleep(2)
@@ -154,7 +154,7 @@ class MPsetting(unittest.TestCase):
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/rl_language_setting').click()  #点击语言设置
 			sleep(1)
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_selectlanguage_english').click()  #点击English
-			sleep(4)
+			sleep(6)
 			txt = self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').get_attribute("text")
 			self.assertEqual(txt,'Me')
 			sleep(2)
@@ -169,7 +169,7 @@ class MPsetting(unittest.TestCase):
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/rl_language_setting').click()  #点击语言设置
 			sleep(1)
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_selectlanguage_simplified').click()  #点击简体中文
-			sleep(4)
+			sleep(6)
 			txt = self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my').get_attribute("text")
 			self.assertEqual(txt,u'我')
 			sleep(2)

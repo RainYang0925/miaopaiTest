@@ -1,0 +1,83 @@
+/Users/liyuanhong/project/pythonPro/miaopaiTest
+/Users/liyuanhong/project/pythonPro/miaopaiTest
+/Users/liyuanhong/project/pythonPro/miaopaiTest
+/Users/liyuanhong/project/pythonPro/miaopaiTest
+/Users/liyuanhong/project/pythonPro/miaopaiTest
+************************** MPmypage test **************************
+************************** MPmypage test **************************
+************************** MPmypage test **************************
+************************** MPmypage test **************************
+start test_feedback test ...  
+Initialize
+Traceback (most recent call last):
+  File "/Users/liyuanhong/project/pythonPro/miaopaiTest/MPTestCases/myPage/MPmypage.py", line 58, in test_feedback
+    self.driver.find_element_by_name('å‘é€').click()  #ç‚¹å‡»å‘é€æŒ‰é’®
+  File "/Library/Python/2.7/site-packages/selenium-3.0.1-py2.7.egg/selenium/webdriver/remote/webdriver.py", line 365, in find_element_by_name
+    return self.find_element(by=By.NAME, value=name)
+  File "/Library/Python/2.7/site-packages/selenium-3.0.1-py2.7.egg/selenium/webdriver/remote/webdriver.py", line 752, in find_element
+    'value': value})['value']
+  File "/Library/Python/2.7/site-packages/selenium-3.0.1-py2.7.egg/selenium/webdriver/remote/webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "build/bdist.macosx-10.11-intel/egg/appium/webdriver/errorhandler.py", line 29, in check_response
+    raise wde
+InvalidSelectorException: Message: Locator Strategy 'name' is not supported for this session
+
+
+end ... 
+start test_mypage_topinfo_click test ...  
+Initialize
+Traceback (most recent call last):
+  File "/Users/liyuanhong/project/pythonPro/miaopaiTest/MPTestCases/myPage/MPmypage.py", line 182, in test_mypage_topinfo_click
+    InitLogin.init_login(self)  #å¦‚æœæ²¡æœ‰ç™»é™†åˆ™ç™»é™†ç§’æ‹
+  File "/Users/liyuanhong/project/pythonPro/miaopaiTest/MPTestCases/common/InitLogin.py", line 38, in init_login
+    self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_feed').click() #µÇÂ½×´Ì¬Ôò»Øµ½ÈÈÃÅÒ³Ãæ
+  File "/Library/Python/2.7/site-packages/selenium-3.0.1-py2.7.egg/selenium/webdriver/remote/webdriver.py", line 269, in find_element_by_id
+    return self.find_element(by=By.ID, value=id_)
+  File "/Library/Python/2.7/site-packages/selenium-3.0.1-py2.7.egg/selenium/webdriver/remote/webdriver.py", line 752, in find_element
+    'value': value})['value']
+  File "/Library/Python/2.7/site-packages/selenium-3.0.1-py2.7.egg/selenium/webdriver/remote/webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "build/bdist.macosx-10.11-intel/egg/appium/webdriver/errorhandler.py", line 29, in check_response
+    raise wde
+NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
+
+
+end ... 
+start test_mypage_under_tipinfo_items_click test ...  
+Initialize
+Traceback (most recent call last):
+  File "/Users/liyuanhong/project/pythonPro/miaopaiTest/MPTestCases/myPage/MPmypage.py", line 211, in test_mypage_under_tipinfo_items_click
+    InitLogin.init_login(self)  #å¦‚æœæ²¡æœ‰ç™»é™†åˆ™ç™»é™†ç§’æ‹
+  File "/Users/liyuanhong/project/pythonPro/miaopaiTest/MPTestCases/common/InitLogin.py", line 38, in init_login
+    self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_feed').click() #µÇÂ½×´Ì¬Ôò»Øµ½ÈÈÃÅÒ³Ãæ
+  File "/Library/Python/2.7/site-packages/selenium-3.0.1-py2.7.egg/selenium/webdriver/remote/webdriver.py", line 269, in find_element_by_id
+    return self.find_element(by=By.ID, value=id_)
+  File "/Library/Python/2.7/site-packages/selenium-3.0.1-py2.7.egg/selenium/webdriver/remote/webdriver.py", line 752, in find_element
+    'value': value})['value']
+  File "/Library/Python/2.7/site-packages/selenium-3.0.1-py2.7.egg/selenium/webdriver/remote/webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "build/bdist.macosx-10.11-intel/egg/appium/webdriver/errorhandler.py", line 29, in check_response
+    raise wde
+NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
+
+
+end ... 
+start test_message_items_all_click test ...  
+Initialize
+Traceback (most recent call last):
+  File "/Users/liyuanhong/project/pythonPro/miaopaiTest/MPTestCases/myPage/MPmypage.py", line 284, in test_message_items_all_click
+    InitLogin.init_login(self)  #å¦‚æœæ²¡æœ‰ç™»é™†åˆ™ç™»é™†ç§’æ‹
+  File "/Users/liyuanhong/project/pythonPro/miaopaiTest/MPTestCases/common/InitLogin.py", line 38, in init_login
+    self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_feed').click() #µÇÂ½×´Ì¬Ôò»Øµ½ÈÈÃÅÒ³Ãæ
+  File "/Library/Python/2.7/site-packages/selenium-3.0.1-py2.7.egg/selenium/webdriver/remote/webdriver.py", line 269, in find_element_by_id
+    return self.find_element(by=By.ID, value=id_)
+  File "/Library/Python/2.7/site-packages/selenium-3.0.1-py2.7.egg/selenium/webdriver/remote/webdriver.py", line 752, in find_element
+    'value': value})['value']
+  File "/Library/Python/2.7/site-packages/selenium-3.0.1-py2.7.egg/selenium/webdriver/remote/webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "build/bdist.macosx-10.11-intel/egg/appium/webdriver/errorhandler.py", line 29, in check_response
+    raise wde
+NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
+
+
+end ... 
