@@ -34,8 +34,8 @@ import MPdetailPage
 
 #MPlogin.suite("0")
 #MPshoot.suite("0")
-#MPsetting.suite("0")
+MPsetting.suite("0")
 #MPHotpage.suite("0")
 #MPHotpageBanner.suite("0")
-MPmypage.suite("0")
+#MPmypage.suite("0")
 #MPdetailPage.suite("0")

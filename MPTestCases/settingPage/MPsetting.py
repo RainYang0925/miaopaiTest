@@ -78,6 +78,10 @@ class MPsetting(unittest.TestCase):
 			sleep(1)
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/mute_setting').click() #关闭静音
 			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click() #点击返回按钮
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_feed').click() #点击首页回到首页
+			sleep(1)
 		except Exception,e:
 			print traceback.format_exc()
 			CutScreenshot.cutScreenShot(self,sys._getframe().f_code.co_name)
@@ -114,6 +118,10 @@ class MPsetting(unittest.TestCase):
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/message_good').click()  #关闭赞push
 			sleep(1)
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click()  #点击返回按钮退出该页面
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click() #点击返回按钮
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_feed').click() #点击首页回到首页
 			sleep(1)
 		except Exception,e:
 			print traceback.format_exc()
@@ -181,6 +189,10 @@ class MPsetting(unittest.TestCase):
 			sleep(1)
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
 			sleep(2)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click() #点击返回按钮
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_feed').click() #点击首页回到首页
+			sleep(1)
 		except Exception,e:
 			print traceback.format_exc()
 			CutScreenshot.cutScreenShot(self,sys._getframe().f_code.co_name)
@@ -210,6 +222,10 @@ class MPsetting(unittest.TestCase):
 				sleep(1)
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click()  #退出手机号绑定
 			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click() #点击返回按钮
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_feed').click() #点击首页回到首页
+			sleep(1)
 		except Exception,e:
 			print traceback.format_exc()
 			CutScreenshot.cutScreenShot(self,sys._getframe().f_code.co_name)
@@ -233,6 +249,10 @@ class MPsetting(unittest.TestCase):
 			sleep(2)
 			self.driver.find_element_by_name('版本检测').click()  #点击版本检测选项
 			sleep(3)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click() #点击返回按钮
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_feed').click() #点击首页回到首页
+			sleep(1)
 		except Exception,e:
 			print traceback.format_exc()
 			CutScreenshot.cutScreenShot(self,sys._getframe().f_code.co_name)
@@ -282,6 +302,10 @@ class MPsetting(unittest.TestCase):
 				pass
 			self.assertIsNotNone(self.el)  #通过缓存为0来判断缓存已经被清空
 			sleep(2)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click() #点击返回按钮
+			sleep(1)
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_feed').click() #点击首页回到首页
+			sleep(1)
 		except Exception,e:
 			print traceback.format_exc()
 			CutScreenshot.cutScreenShot(self,sys._getframe().f_code.co_name)
@@ -311,9 +335,9 @@ class MPsetting(unittest.TestCase):
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/dialog_right_buton').click() #点击确定
 			sleep(2)
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click() #点击返回到我的页面
-			sleep(2)
+			sleep(1)
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_feed').click() #点击回到首页首页
-			sleep(2)
+			sleep(1)
 		except Exception,e:
 			print traceback.format_exc()
 			CutScreenshot.cutScreenShot(self,sys._getframe().f_code.co_name)
