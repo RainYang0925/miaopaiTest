@@ -13,10 +13,6 @@ import InitLogin
 import traceback
 
 
-
-
-
-
 import unittest
 from appium import webdriver
 from time import sleep
@@ -247,7 +243,8 @@ class MPsetting(unittest.TestCase):
 			sleep(1)
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click() #我的页面点击设置
 			sleep(2)
-			self.driver.find_element_by_name('版本检测').click()  #点击版本检测选项
+			#self.driver.find_element_by_name('版本检测').click()  #点击版本检测选项
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/check_version').click() #点击版本检测选项
 			sleep(3)
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click() #点击返回按钮
 			sleep(1)
@@ -279,7 +276,8 @@ class MPsetting(unittest.TestCase):
 			sleep(2)
 			self.driver.swipe(200,1000,200,100,1000) #设置页面向上滑动
 			sleep(1)
-			self.driver.find_element_by_name('清空缓存').click()  #点击清空缓存
+			#self.driver.find_element_by_name('清空缓存').click()  #点击清空缓存
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/clear_cache').click() #点击清空缓存
 			sleep(1)
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/dialog_left_buton').click()  #点击否取消清空缓存
 			self.el = None
@@ -290,17 +288,22 @@ class MPsetting(unittest.TestCase):
 				pass
 			self.assertIsNone(self.el)  #通过缓存不为0来判断缓存没有清空
 			sleep(2)
-			self.driver.find_element_by_name('清空缓存').click()  #点击清空缓存
+			#self.driver.find_element_by_name('清空缓存').click()  #点击清空缓存
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/clear_cache').click() #点击清空缓存
 			sleep(5)
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/dialog_right_buton').click()  #点击是清空缓存
 			sleep(1)
 			self.el = None
+			self.txt = None
 			try:
-				self.el = self.driver.find_element_by_name('0')
+				#self.el = self.driver.find_element_by_name('0')
+				self.txt = self.driver.find_elements_by_id('com.yixia.videoeditor:id/cache_num')[1].text #获取缓存的值(index0是系统版本号)
+				print self.txt.decode("ascii").encode("utf-8")
 			except Exception,ex:
-				#print Exception,':',ex
+				print Exception,':',ex
 				pass
-			self.assertIsNotNone(self.el)  #通过缓存为0来判断缓存已经被清空
+			#self.assertIsNotNone(self.el)  #通过判断元素是否存在来判断缓存是否已经被清空
+			self.assertEqual("0",self.txt)  #通过缓存为0来判断缓存已经被清空
 			sleep(2)
 			self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click() #点击返回按钮
 			sleep(1)

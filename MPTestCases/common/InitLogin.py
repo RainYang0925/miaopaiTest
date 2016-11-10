@@ -4,24 +4,24 @@
 from time import sleep
 
 def init_login(self):
-	#´¦ÀíÎ´µÇÂ½µÄÇé¿ö
+	#å¤„ç†æœªç™»é™†çš„æƒ…å†µ
 	sleep(5)
-	self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my_lay').click() #µã»÷µ×µ¼ÉÏµÄÎÒ
+	self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my_lay').click() #ç‚¹å‡»åº•å¯¼ä¸Šçš„æˆ‘
 	sleep(2)
 	try:
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/no_login_views').click() #µã»÷ÎÒµÄÒ³Ãæ¶¥²¿µÄ¸öÈËĞÅÏ¢À¸µ¯³öµÇÂ½¶Ô»°¿ò
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/no_login_views').click() #ç‚¹å‡»æˆ‘çš„é¡µé¢é¡¶éƒ¨çš„ä¸ªäººä¿¡æ¯æ å¼¹å‡ºç™»é™†å¯¹è¯æ¡†
 		sleep(2)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/login_phone_button').click() #µã»÷ÊÖ»úºÅµÇÂ½
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/login_phone_button').click() #ç‚¹å‡»æ‰‹æœºå·ç™»é™†
 		sleep(2)
-		#5¡¢ÊäÈëÊÖ»úºÅ
+		#5ã€è¾“å…¥æ‰‹æœºå·
 		e3 = self.driver.find_element_by_id('com.yixia.videoeditor:id/phone_textview')
-		e3.click()  #µã»÷ÊÖ»úºÅÊäÈë¿òµ¯³ö¼üÅÌ
+		e3.click()  #ç‚¹å‡»æ‰‹æœºå·è¾“å…¥æ¡†å¼¹å‡ºé”®ç›˜
 		sleep(0.5)
 		e3.send_keys('13699193860')
 		sleep(2)
-		#5¡¢ÊäÈëÃÜÂë
+		#5ã€è¾“å…¥å¯†ç 
 		e3 = self.driver.find_element_by_id('com.yixia.videoeditor:id/password_textview')
-		e3.click()  #µã»÷ÃÜÂëÊäÈë¿òµ¯³ö¼üÅÌ
+		e3.click()  #ç‚¹å‡»å¯†ç è¾“å…¥æ¡†å¼¹å‡ºé”®ç›˜
 		sleep(0.5)
 		#e3.send_keys('123456')
 		self.driver.keyevent(8)
@@ -36,20 +36,50 @@ def init_login(self):
 		sleep(0.5)
 		self.driver.keyevent(13)
 		sleep(2)
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/login_button').click() #µã»÷µÇÂ½
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/login_button').click() #ç‚¹å‡»ç™»é™†
 		sleep(2)
 		try:
-			self.driver.find_element_by_id('com.yixia.videoeditor:id/skip').click() #ÊÖ»úºÅ°ó¶¨Ò³Ãæµã»÷Ìø¹ı
+			self.driver.find_element_by_id('com.yixia.videoeditor:id/skip').click() #æ‰‹æœºå·ç»‘å®šé¡µé¢ç‚¹å‡»è·³è¿‡
 			sleep(2)
 		except:
 			pass
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_feed').click() #µã»÷Ê×Ò³»Øµ½Ê×Ò³
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_feed').click() #ç‚¹å‡»é¦–é¡µå›åˆ°é¦–é¡µ
 		sleep(2)
 	except:
-		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_feed').click() #µÇÂ½×´Ì¬Ôò»Øµ½ÈÈÃÅÒ³Ãæ
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_feed').click() #ç™»é™†çŠ¶æ€åˆ™å›åˆ°çƒ­é—¨é¡µé¢
 		sleep(2)
 		
 		
-		
+def init_logout(self):
+	#å¤„ç†å·²ç™»å½•éœ€è¦é€€å‡ºç™»å½•æƒ…å†µ
+	sleep(5)
+	self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_my_lay').click() #ç‚¹å‡»åº•å¯¼ä¸Šçš„æˆ‘
+	try:
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/fans_layout').click()
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click()#ç‚¹å‡»è¿”å›
+		sleep(2)
+		self.driver.swipe(600,1000,600,200)
+		sleep(2)
+		self.driver.swipe(600,1000,600,200)
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/setting_layout').click()#ç‚¹å‡»è®¾ç½®
+		sleep(2)
+		self.driver.swipe(600,1000,600,200)
+		sleep(2)
+		self.driver.swipe(600,1000,600,200)
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/logout_button').click()#ç‚¹å‡»é€€å‡ºç™»å½•
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/dialog_right_buton').click()#ç‚¹å‡»ç¡®å®š
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/titleLeft').click()#ç‚¹å‡»è¿”å›
+		sleep(2)
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_feed').click() #ç™»é™†çŠ¶æ€åˆ™å›åˆ°çƒ­é—¨é¡µé¢
+		sleep(2)
+	except:
+		self.driver.find_element_by_id('com.yixia.videoeditor:id/bottom_feed').click() #ç™»é™†çŠ¶æ€åˆ™å›åˆ°çƒ­é—¨é¡µé¢
+		sleep(2)
 		
 		

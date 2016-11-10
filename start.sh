@@ -1,6 +1,6 @@
 #!/bin/bash
 
 rm test.log
-rm ./errorScreenShot/*
+rm ./errorScreenShot/*.png
 python startTest.py | tee test.log
 

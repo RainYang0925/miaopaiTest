@@ -1,29 +1,11 @@
-ED:\git\miaopaiTest
-D:\git\miaopaiTest
-D:\git\miaopaiTest
-D:\git\miaopaiTest
-D:\git\miaopaiTest
-************************** MPmypage test **************************
-************************** MPmypage test **************************
-************************** MPmypage test **************************
-************************** MPmypage test **************************
-start test_feedback test ...  
+/Users/liyuanhong/project/pythonPro/miaopaiTest
+/Users/liyuanhong/project/pythonPro/miaopaiTest
+/Users/liyuanhong/project/pythonPro/miaopaiTest
+/Users/liyuanhong/project/pythonPro/miaopaiTest
+/Users/liyuanhong/project/pythonPro/miaopaiTest
+/Users/liyuanhong/project/pythonPro/miaopaiTest
+/Users/liyuanhong/project/pythonPro/miaopaiTest
+************************** MPmypageSetUserInfo test **************************
+start test_do_change_userinfo_operations test ...  
 Initialize
-Traceback (most recent call last):
-  File "D:\git\miaopaiTest\MPTestCases\myPage\MPmypage.py", line 157, in test_feedback
-    self.driver.find_element_by_name('发送').click()  #点击发送按钮
-  File "C:\Python27\lib\site-packages\selenium-3.0.0b3-py2.7.egg\selenium\webdriver\remote\webdriver.py", line 365, in find_element_by_name
-    return self.find_element(by=By.NAME, value=name)
-  File "C:\Python27\lib\site-packages\selenium-3.0.0b3-py2.7.egg\selenium\webdriver\remote\webdriver.py", line 752, in find_element
-    'value': value})['value']
-  File "C:\Python27\lib\site-packages\selenium-3.0.0b3-py2.7.egg\selenium\webdriver\remote\webdriver.py", line 236, in execute
-    self.error_handler.check_response(response)
-  File "build\bdist.win-amd64\egg\appium\webdriver\errorhandler.py", line 29, in check_response
-    raise wde
-NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
-
-
 end ... 
-start test_mypage_topinfo_click test ...  
-Initialize
-^C

@@ -1,28 +1,28 @@
---------------¡¾ÉèÖÃÒ³Ãæ²âÊÔÓÃÀý¸ÅÒª¡¿--------------
-¡¾ÓÃÀý1¡¿test_into_setting_page
-1¡¢·Ö±ð¶Ô¾²Òô¡¢wifiÏÂ×Ô¶¯²¥·Å¡¢3G½Ïµ×»­ÖÊ¿ª¹Ø¡¢¾²Òô½øÐÐÁË´ò¿ªºÍ¹Ø±ÕµÄµã»÷²âÊÔ
+--------------ã€è®¾ç½®é¡µé¢æµ‹è¯•ç”¨ä¾‹æ¦‚è¦ã€‘--------------
+ã€ç”¨ä¾‹1ã€‘test_into_setting_page
+1ã€åˆ†åˆ«å¯¹é™éŸ³ã€wifiä¸‹è‡ªåŠ¨æ’­æ”¾ã€3Gè¾ƒåº•ç”»è´¨å¼€å…³ã€é™éŸ³è¿›è¡Œäº†æ‰“å¼€å’Œå…³é—­çš„ç‚¹å‡»æµ‹è¯•
 
-¡¾ÓÃÀý2¡¿test_comment_etc
-¡¾ÐÂÏûÏ¢ÌáÐÑ¡¿
-1¡¢·Ö±ð¶Ô·ÛË¿£¬ÆÀÂÛ£¬ÔÞµÄpush¿ª¹Ø½øÐÐÁË´ò¿ªºÍ¹Ø±Õ
+ã€ç”¨ä¾‹2ã€‘test_comment_etc
+ã€æ–°æ¶ˆæ¯æé†’ã€‘
+1ã€åˆ†åˆ«å¯¹ç²‰ä¸ï¼Œè¯„è®ºï¼Œèµžçš„pushå¼€å…³è¿›è¡Œäº†æ‰“å¼€å’Œå…³é—­
 
-¡¾ÓÃÀý3¡¿test_change_language
-¡¾ÓïÑÔÉèÖÃ¡¿
-1¡¢Ö÷Òª²âÊÔÁË·±ÌåÖÐÎÄ£¬Ó¢ÎÄ£¬¼òÌåÖÐÎÄÖ®¼äµÄÇÐ»»£¬ÒÔ¼°ÅÐ¶ÏÓïÑÔÊÇ·ñ¸Ä±ä
+ã€ç”¨ä¾‹3ã€‘test_change_language
+ã€è¯­è¨€è®¾ç½®ã€‘
+1ã€ä¸»è¦æµ‹è¯•äº†ç¹ä½“ä¸­æ–‡ï¼Œè‹±æ–‡ï¼Œç®€ä½“ä¸­æ–‡ä¹‹é—´çš„åˆ‡æ¢ï¼Œä»¥åŠåˆ¤æ–­è¯­è¨€æ˜¯å¦æ”¹å˜
 
-¡¾ÓÃÀý4¡¿test_bind_mobile
-¡¾ÊÖ»ú°ó¶¨¡¿
-1¡¢Ö÷Òª²âÊÔÁË½øÈëÊÖ»úºÅ°ó¶¨ºÍÍË³öÊÖ»úºÅ°ó¶¨Ò³Ãæ
+ã€ç”¨ä¾‹4ã€‘test_bind_mobile
+ã€æ‰‹æœºç»‘å®šã€‘
+1ã€ä¸»è¦æµ‹è¯•äº†è¿›å…¥æ‰‹æœºå·ç»‘å®šå’Œé€€å‡ºæ‰‹æœºå·ç»‘å®šé¡µé¢
 
-¡¾²âÊÔÓÃÀý5¡¿test_version_check
-¡¾°æ±¾¼ì²â¡¿
-1¡¢Ö÷Òª²âÊÔÁË°æ¼ì²â¹¦ÄÜÕý³£
+ã€æµ‹è¯•ç”¨ä¾‹5ã€‘test_version_check
+ã€ç‰ˆæœ¬æ£€æµ‹ã€‘
+1ã€ä¸»è¦æµ‹è¯•äº†ç‰ˆæ£€æµ‹åŠŸèƒ½æ­£å¸¸
 
-¡¾²âÊÔÓÃÀý6¡¿test_clear_cache
-¡¾Çå¿Õ»º´æ¡¿
-1¡¢Ö÷Òª¼ì²âµã»÷Çé¿ö»º´æ²»Çå¿Õ
-2¡¢µã»÷Çå¿Õ»º´æÇå¿Õ
+ã€æµ‹è¯•ç”¨ä¾‹6ã€‘test_clear_cache
+ã€æ¸…ç©ºç¼“å­˜ã€‘
+1ã€ä¸»è¦æ£€æµ‹ç‚¹å‡»æƒ…å†µç¼“å­˜ä¸æ¸…ç©º
+2ã€ç‚¹å‡»æ¸…ç©ºç¼“å­˜æ¸…ç©º
 
-¡¾²âÊÔÓÃÀý7¡¿test_setting_page_all_button_click
-¡¾ÍË³öµÇÂ¼¡¿
-1¡¢µã»÷ÍË³öµÇÂ¼
+ã€æµ‹è¯•ç”¨ä¾‹7ã€‘test_setting_page_all_button_click
+ã€é€€å‡ºç™»å½•ã€‘
+1ã€ç‚¹å‡»é€€å‡ºç™»å½•
